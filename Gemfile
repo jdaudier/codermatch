@@ -36,7 +36,6 @@ gem 'quiet_assets'
 
 gem 'will_paginate'
 
-gem 'twitter-bootstrap-rails'
 
 
 # To use ActiveModel has_secure_password
