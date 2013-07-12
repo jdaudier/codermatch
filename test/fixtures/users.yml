@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  level: 1
+  language: MyString
+  zipcode: 1
+
+two:
+  level: 1
+  language: MyString
+  zipcode: 1

@@ -1,0 +1,211 @@
+body {
+	background: url("../img/project_papper.png");
+}
+
+.navbar-inverse {
+	background-image: url("../img/bg_header.png");
+	background-color: transparent;
+	background-repeat: repeat-x;
+	height: 84px;
+	margin-bottom: 50px;
+	border-color: transparent;
+}
+
+.name h1 {  
+    text-indent: 100%;  
+    white-space: nowrap;  
+    overflow: hidden; 
+}
+
+.brand {
+	position: relative;
+	top: -60px;
+	left: -30px;
+}
+
+.container li {
+	list-style: none;
+}
+
+.hero-unit h1 {
+	color: #1399cd;
+	font-size: 60px;
+}
+
+.hero-unit h2 {
+	color: #535353;
+	text-align: right;
+	font-size: 56px;
+	margin-top: 30px;
+}
+
+.hero-unit {
+	margin-top: 80px;
+	margin-bottom: 0;
+	padding-bottom: 30px;
+	background-color: transparent;
+}
+
+.right-column {
+	background: rgba(255, 255, 255, 0.4);
+}
+
+.left-column {
+	background: rgba(220, 225, 230, 0.4);
+}
+
+.right-column, .left-column {
+   padding: 20px;
+   box-shadow: 0 0 2px #a9a9a9;
+   min-height: 550px;
+}
+
+.match-me-btn {
+   padding: 12px;
+   margin-bottom: 12px;
+}
+
+.span4 h2, .span8 h2 {
+	color: #535353;
+	text-align: center;
+}
+
+.form-inline h2 {
+	text-align: left;
+	line-height: 2;
+	padding: 0 30px;
+}
+
+.largeinput input, .largeinput select {
+  	height: 26px; 
+  	font-size: 20px; 
+}
+
+.btn h2 {
+	color: white;
+}
+
+.span8 hr {
+	border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #dad9d9;
+}
+
+.thumbnails>li {
+  	margin-left: 50px;
+}
+
+.thumbnails {
+  	margin-bottom: 0px;
+}
+
+.btn-primary {
+   background: #65a9d7; 
+   background: -webkit-gradient(linear, left top, left bottom, from(#1399cd), to(#65a9d7));
+   background: -webkit-linear-gradient(top, #1399cd, #65a9d7);
+   background: -moz-linear-gradient(top, #1399cd, #65a9d7);
+   background: -ms-linear-gradient(top, #1399cd, #65a9d7);
+   background: -o-linear-gradient(top, #1399cd, #65a9d7);
+   }
+
+.btn-primary:hover {
+   background: #1182ab;
+   }
+
+.btn-primary:active {
+   border-top-color: #107DA8;
+   background: #0E6F95;
+   }
+
+footer {
+	background: url("../img/footer.png");
+	height: 154px;
+	margin-top: 35px;
+	background-repeat: repeat-x;
+}
+
+#socialmedia {
+	list-style-type: none;
+	margin-left: 0px;
+}
+
+#socialmedia li {
+	float: left;
+	margin: 46px 15px 46px 0px;
+}
+
+#socialmedia li a {
+    background-color: transparent;
+    background-image: url("../img/sprites.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 60px;
+    display: block;
+}
+
+#socialmedia .Twitter a {
+	background-position: 0px 0px;
+}
+
+#socialmedia .Twitter a:hover {
+	background-position: -0px -77px;
+}
+
+#socialmedia .FB a {
+	background-position: -88px -0px;
+}
+
+#socialmedia .FB a:hover {
+	background-position: -89px -76px;
+}
+
+.rw-words{
+	display: inline;
+	text-indent: 20px;
+}
+
+.rw-words-1 span{
+	position: absolute;
+	opacity: 0;
+	-webkit-animation: rotateWord 12s linear infinite 0s;
+	-moz-animation: rotateWord 12s linear infinite 0s;
+	-o-animation: rotateWord 12s linear infinite 0s;
+	-ms-animation: rotateWord 12s linear infinite 0s;
+	animation: rotateWord 12s linear infinite 0s;
+}
+
+.rw-words-1 span:nth-child(2) { 
+    -webkit-animation-delay: 4s; 
+	-moz-animation-delay: 4s; 
+	-o-animation-delay: 4s; 
+	-ms-animation-delay: 4s; 
+	animation-delay: 4s; 
+}
+
+.rw-words-1 span:nth-child(3) { 
+    -webkit-animation-delay: 8s; 
+	-moz-animation-delay: 8s; 
+	-o-animation-delay: 8s; 
+	-ms-animation-delay: 8s; 
+	animation-delay: 8s; 
+}
+
+@-webkit-keyframes rotateWord {
+    0% { opacity: 0; }
+    2% { opacity: 0; -webkit-transform: translateY(-30px); }
+	5% { opacity: 1; -webkit-transform: translateY(0px);}
+    17% { opacity: 1; -webkit-transform: translateY(0px); }
+	20% { opacity: 0; -webkit-transform: translateY(30px); }
+	80% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@-moz-keyframes rotateWord {
+    0% { opacity: 0; }
+    2% { opacity: 0; -moz-transform: translateY(-30px); }
+	5% { opacity: 1; -moz-transform: translateY(0px);}
+    17% { opacity: 1; -moz-transform: translateY(0px); }
+	20% { opacity: 0; -moz-transform: translateY(30px); }
+	80% { opacity: 0; }
+    100% { opacity: 0; }
+}
