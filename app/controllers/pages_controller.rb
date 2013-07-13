@@ -8,5 +8,10 @@ class PagesController < ApplicationController
     @level = Level.new
   end
 
-
+  def signup
+    arbiter = NewDeveloperArbiter.new( params[:signup] )
+    arbiter.process
+    redirect_to arbiter.target
+  end
 end
+

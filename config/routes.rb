@@ -1,6 +1,9 @@
 Codermatch::Application.routes.draw do
 
-  resources :matches
+  root :to => 'pages#alt'
+  post '/signup' => 'pages#signup'
+
+  resources :coder_searches
   resources :languages
   resources :levels
   resources :users
@@ -54,7 +57,6 @@ Codermatch::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'pages#new'
 
   # See how all your routes lay out with "rake routes"
 
