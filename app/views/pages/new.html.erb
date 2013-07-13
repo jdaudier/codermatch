@@ -1,0 +1,23 @@
+<%= form_for @user do |f| %>
+  <%= f.label :firstname %>
+  <%= f.text_field :firstname %><br />
+
+  <%= f.label :lastname %>
+  <%= f.text_field :lastname %><br />
+
+  <%= f.label :zipcode %>
+  <%= f.text_field :zipcode %><br />
+
+    <%= form_for @language do |f| %>
+      <%= f.label :language %>
+      <%= f.text_field :language %><br />
+    <% end %>
+
+    <%= form_for @level do |f| %>
+      <%= f.label :level %>
+      <%= f.text_field :level %><br />
+    <% end %>
+
+  <%= f.submit "MATCH ME!" %>
+<% end %>
+
