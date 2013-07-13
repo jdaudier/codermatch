@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
-  attr_accessible :language, :level, :zipcode, :firstname, :lastname
-  has_many :levels
-  has_many :languages, through: :levels
+  LEVELS = ['Advanced', 'Intermediate', 'Beginner']
+
+  attr_accessible :language_id, :language, :level, :zipcode, :firstname, :lastname
+  belongs_to :language
 end
+
