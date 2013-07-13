@@ -1,0 +1,10 @@
+<h1>Matches</h1>
+
+I found
+<%= @results.count %>
+nerds in your area:
+
+<%- @results.each do |result| %>
+  <p><%= result.firstname %> knows <%= result.language.language %></p>
+<% end %>
+
