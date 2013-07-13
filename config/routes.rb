@@ -3,7 +3,7 @@ Codermatch::Application.routes.draw do
   root :to => 'pages#alt'
   post '/signup' => 'pages#signup'
 
-  resources :coder_searches
+  resource :coder_search
   resources :languages
   resources :levels
   resources :users

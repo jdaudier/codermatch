@@ -5,7 +5,7 @@
     <h2>I am <input type="text" name="signup[first_name]"> .<br>
       I am a
         <select name="signup[my_level]">
-          <% User::LEVELS.each do |level|
+          <% User::LEVELS.each do |level| %>
             <option><%= level %></option>
           <% end %>
         </select>
@@ -18,7 +18,7 @@
         hacker looking to find another 
 
         <select name="signup[pair_level]">
-          <% User::LEVELS.each do |level|
+          <% User::LEVELS.each do |level| %>
             <option><%= level %></option>
           <% end %>
         </select>
