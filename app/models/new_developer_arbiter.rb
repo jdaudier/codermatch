@@ -1,4 +1,4 @@
-class NewDeveloperArbiter < Valuable
+class NewDeveloperArbiter #< Valuable
   attr_accessor :firstname, :my_language, :my_level, :pair_language, :pair_level, :zipcode
 
   def initialize(atts = {})
@@ -23,4 +23,3 @@ class NewDeveloperArbiter < Valuable
     "/coder_search?language=#{pair_language}&level=#{pair_level}&zipcode=#{zipcode}"
   end
 end
-

@@ -2,7 +2,7 @@
   <h2>Who are you?</h2>
   <hr>
   <form action="/signup" method="post" class="form-inline largeinput">
-    <h2>I am <input type="text" name="signup[first_name]"> .<br>
+    <h2>I am <input type="text" name="signup[first_name]" placeholder="first name"> <input type="text" name="signup[last_name]" placeholder="last name"> .<br>
       I am a
         <select name="signup[my_level]">
           <% User::LEVELS.each do |level| %>
