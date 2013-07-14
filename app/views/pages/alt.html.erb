@@ -1,10 +1,43 @@
+<% if @current_user %>
 
-<div class='hero-unit'>
-  <div data-hull-widget='identity@hull' data-hull-provider='github'></div>
+  <%= render partial: 'signup_form'%>
+
+<% else %>
+
+<div class="container">
+
+  <div class="hero-unit">
+    <h1>Coding alone is 
+      <div class="rw-words rw-words-1">
+        <span>hard...</span>
+        <span>not very fun...</span>
+        <span>just plain sad...</span>
+      </div>
+    </h1>
+    <h2>Find your coding buddy.</h2>
+  </div>
+
+  <div id="myCarousel" class="carousel slide">
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+      <div class="active item">
+        <%= image_tag("Lonely-Coder.svg", :alt => "Lonely Coder", :class => "splash-image") %>
+      </div>
+      <div class="item">
+        <%= image_tag("Coder-w-Buddy.svg", :alt => "Coder with Buddy", :class => "splash-image") %>
+      </div>
+    </div>
+  </div>
+    
 </div>
-  
-<hr>
 
-<%= render partial: 'signup_form' if @current_user %>
+<script>
+  $(document).ready(function(){
+    $('.carousel').carousel({
+      interval: 4000
+    });
+  });
+</script>
 
 
+<% end %>

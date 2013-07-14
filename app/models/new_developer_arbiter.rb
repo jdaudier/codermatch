@@ -21,7 +21,7 @@ class NewDeveloperArbiter #< Valuable
   def process
     @current_user.update_attributes({
       :zipcode => self.zipcode, 
-      :language => self.language, 
+      :language => self.language, #This is plugged into the language method above
       :level => self.my_level
     })
   end

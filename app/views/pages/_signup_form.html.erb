@@ -1,39 +1,42 @@
-<div class="span8 right-column">
-  <h2>Who are you?</h2>
-  <hr>
-  <form action="/signup" method="post" class="form-inline largeinput">
-    <h2>
-      I am <pre><%= @current_user.name %></pre>
 
-      and my GitHub login is <pre><%= @current_user.login %></pre>
-      I am a
-        <select name="signup[my_level]">
-          <% User::LEVELS.each do |level| %>
-            <option><%= level %></option>
-          <% end %>
-        </select>
-        <select name="signup[my_language]">
-          <% Language.all.each do |language| %>
-            <option><%= language.language %></option>
-          <% end %>
-        </select>
 
-        hacker looking to find another 
+  <div class="span8 right-column">
+    <h2>Who are you?</h2>
+    <hr>
+    <form action="/signup" method="post" class="form-inline largeinput">
+      <h2>
+        I am <pre><%= @current_user.name %></pre>
 
-        <select name="signup[pair_level]">
-          <% User::LEVELS.each do |level| %>
-            <option><%= level %></option>
-          <% end %>
-        </select>
-        <select name="signup[pair_language]">
-          <% Language.all.each do |language| %>
-            <option><%= language.language %></option>
-          <% end %>
-        </select>
-coder to pair program with around <input type="text" pattern="[0-9]*" name="signup[zipcode]" placeholder="zip code"> .
-    </h2>
-    <div class="span6 match-me-btn">
-      <button class="btn btn-large btn-block btn-primary" type="submit"><h2>MATCH ME!</h2></button>
-    </div>
-  </form>
-</div>
+        and my GitHub login is <pre><%= @current_user.login %></pre>
+        I am a
+          <select name="signup[my_level]">
+            <% User::LEVELS.each do |level| %>
+              <option><%= level %></option>
+            <% end %>
+          </select>
+          <select name="signup[my_language]">
+            <% Language.all.each do |language| %>
+              <option><%= language.language %></option>
+            <% end %>
+          </select>
+
+          hacker looking to find another 
+
+          <select name="signup[pair_level]">
+            <% User::LEVELS.each do |level| %>
+              <option><%= level %></option>
+            <% end %>
+          </select>
+          <select name="signup[pair_language]">
+            <% Language.all.each do |language| %>
+              <option><%= language.language %></option>
+            <% end %>
+          </select>
+  coder to pair program with around <input type="text" pattern="[0-9]*" name="signup[zipcode]" placeholder="zip code"> .
+      </h2>
+      <div class="span6 match-me-btn">
+        <button class="btn btn-large btn-block btn-primary" type="submit"><h2>MATCH ME!</h2></button>
+      </div>
+    </form>
+  </div>
+
