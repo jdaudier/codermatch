@@ -3,9 +3,9 @@
   <hr>
   <form action="/signup" method="post" class="form-inline largeinput">
     <h2>
-      I am <pre><%= @current_user.firstname %></pre>
+      I am <pre><%= @current_user.name %></pre>
 
-      and github login is <pre><%= @current_user.lastname %></pre>
+      and my GitHub login is <pre><%= @current_user.login %></pre>
       I am a
         <select name="signup[my_level]">
           <% User::LEVELS.each do |level| %>

@@ -1,3 +1,5 @@
+# This for use with our form
+
 class NewDeveloperArbiter #< Valuable
   attr_accessor :firstname, :my_language, :my_level, :pair_language, :pair_level, :zipcode, :lastname
 

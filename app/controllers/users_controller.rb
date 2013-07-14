@@ -5,7 +5,4 @@ class UsersController < ApplicationController
     @user = User.find_by_lastname(params[:id])
   end
 
-  def match
-  end
-
 end

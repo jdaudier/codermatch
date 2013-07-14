@@ -4,14 +4,12 @@ Codermatch::Application.routes.draw do
   
   root :to => 'pages#alt'
   post '/signup' => 'pages#signup'
-  get '/match'  => 'users#match' 
 
   resource :coder_search
   resources :languages
   resources :levels
   resources :users
-  resources :matches
-  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

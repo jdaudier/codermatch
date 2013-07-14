@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130714183554) do
+ActiveRecord::Schema.define(:version => 20130714193942) do
 
   create_table "languages", :force => true do |t|
     t.string   "language"
@@ -27,14 +27,6 @@ ActiveRecord::Schema.define(:version => 20130714183554) do
     t.datetime "updated_at",  :null => false
   end
 
-  create_table "matches", :force => true do |t|
-    t.string   "repo"
-    t.string   "user_id"
-    t.string   "languages"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "users", :force => true do |t|
     t.integer  "zipcode"
     t.datetime "created_at",  :null => false
@@ -43,6 +35,9 @@ ActiveRecord::Schema.define(:version => 20130714183554) do
     t.string   "lastname"
     t.integer  "language_id"
     t.string   "level"
+    t.string   "email"
+    t.string   "login"
+    t.string   "name"
   end
 
 end
