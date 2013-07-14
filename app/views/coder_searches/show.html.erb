@@ -5,7 +5,7 @@ I found
 nerds in your area:
 
 <%- @results.each do |result| %>
-<p><%= result.firstname %> is a great match for you! You can contact him/her at this email: 
+<p><%= result.firstname %> is a great match for you! Check hist profile here : <%= link_to result.lastname, user_path(result.lastname) %>
 <% result.level %> <% result.language.language %>
 </p>
 <% end %>

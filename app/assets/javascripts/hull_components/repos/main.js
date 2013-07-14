@@ -20,7 +20,7 @@ Hull.widget('repos', {
   },
 
   actions: {
-    selectRepo: function(event, action) {
+    askForMatch: function(event, action) {
       console.warn("Repos: ", this.data);
       console.warn("Selected Repo: ", action.data.repo);
     }

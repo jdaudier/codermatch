@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   attr_accessible :language_id, :language, :level, :zipcode, :firstname, :lastname
 
   belongs_to :language
+  has_many :matches
 
   def self.from_hull_user hull_user_id
     hull_user = Hull.get(hull_user_id)

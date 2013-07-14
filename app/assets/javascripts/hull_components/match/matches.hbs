@@ -1,3 +1,12 @@
 <h3>Results</h3>
 
-We have results for you !
+<table class="table">
+  {{#repos}}
+  <tr>
+    <td>{{name}}</td>
+    <td>
+      <button class='btn' data-hull-action='submitMatch' data-hull-repo='{{full_name}}'>Ask for help</button>
+    </td>
+  </tr>
+  {{/repos}}
+</table>

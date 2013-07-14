@@ -11,5 +11,9 @@ class PagesController < ApplicationController
     arbiter.process
     redirect_to arbiter.target
   end
+
+  def alt
+    @matches = Match.all.limit(100)
+  end
 end
 

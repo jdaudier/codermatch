@@ -1,5 +1,5 @@
 Hull.widget('match', {
-  templates: ['signup_form', 'matches'],
+  templates: ['matches'],
   datasources: {
     matches: function() {
       // Fetch data from your server here... for search results
@@ -7,26 +7,19 @@ Hull.widget('match', {
 
     repos: function() {
       if (this.options.login) {
-        return this.api({ path: 'users/' + this.options.login + '/repos', provider: 'github', params: { per_page: 50 } });
+        return this.api({ path: 'users/' + this.options.login + '/repos', provider: 'github' });
       }
     }
-
   },
 
-  beforeRender: function(data) {
-    data.languages = ['rb', 'js', 'py'];
-    data.levels    =  ['expert', 'rock star'];
-    console.warn("Form @", data);
-  },
-
-  events: {
-    'submit form': function(e) {
-      console.warn("Submitted Form !");
-      if (e)  {
-        e.preventDefault(); 
-        e.stopPropagation()
-      };
-      return false;
+  actions: {
+    submitMatch: function(event, action) {
+      this.api({ provider: 'github', path: 'repos/' + action.data.repo + '/languages' }, function(languages) {
+        $.post('/matches', {
+          repo: action.data.repo,
+          languages: _.keys(languages).join(',')
+        }, function(res) { console.warn("Res", res); });        
+      })
     }
   }
 
