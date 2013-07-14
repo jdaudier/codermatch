@@ -15,7 +15,7 @@
 
   <script type="text/javascript">
   Hull.init({ appId: '<%= Hull.app_id %>', orgUrl: '<%= Hull.org_url %>' });
-  Hull.on('model.hull.me.change', function() { console.warn('me changed !'); });
+  Hull.on('hull.authComplete', function() { setTimeout(function() { document.location.reload(); }, 500); });
   </script>
 
 </head>
