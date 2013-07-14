@@ -2,7 +2,7 @@ Codermatch::Application.routes.draw do
 
   # root :to => 'pages#alt'
   
-  root :to => 'pages#identity'
+  root :to => 'pages#alt'
   post '/signup' => 'pages#signup'
 
   resource :coder_search
