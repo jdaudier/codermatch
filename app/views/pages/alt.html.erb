@@ -2,15 +2,8 @@
 <div class='hero-unit'>
   <div data-hull-widget='identity@hull'></div>
 
-  <pre>Current User: (<%= @current_user_id %>) <%= @current_user.inspect %></pre>
-
-  <% if @github_user %>
-  <div class="well" data-hull-widget="repos" data-hull-login='<%= @github_user['login'] %>'></div>
-  <% end %>
-
 </div>
   
-
 <hr>
 
 <%= render partial: 'signup_form' if @github_user %>

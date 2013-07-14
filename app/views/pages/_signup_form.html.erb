@@ -3,10 +3,12 @@
   <hr>
   <form action="/signup" method="post" class="form-inline largeinput">
     <h2>
-
+      <input type="hidden" name="signup[email]" value="<%= @github_user['email'] %>"/>
       I am 
-      <input type="text" name="signup[lastname]" value="<%= @github_user['name'] %>" placeholder="first name" />
-      <input type="text" name="signup[email]" value="<%= @github_user['email'] %>" /> 
+      <input type="text" name="signup[firstname]" value="<%= @github_user['name'] %>" />
+
+      and github login is
+      <input type="text" name="signup[lastname]" value="<%= @github_user['login'] %>" />
       
       I am a
         <select name="signup[my_level]">
