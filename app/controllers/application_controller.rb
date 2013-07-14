@@ -10,15 +10,10 @@ class ApplicationController < ActionController::Base
     else
       @current_user = session[:current_user]
     end
-    if @current_user
-      @github_user  = @current_user['identities'].select { |i| i['provider'] == 'github' }.first
-    end
   end
 
   def current_user_id
     @current_user_id ||= Hull.authenticate_user(request.env)
-    Rails.logger.info "Current User: #{@current_user_id}"
-    @current_user_id
   end
 
 end

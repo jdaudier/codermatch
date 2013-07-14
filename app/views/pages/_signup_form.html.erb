@@ -3,13 +3,9 @@
   <hr>
   <form action="/signup" method="post" class="form-inline largeinput">
     <h2>
-      <input type="hidden" name="signup[email]" value="<%= @github_user['email'] %>"/>
-      I am 
-      <input type="text" name="signup[firstname]" value="<%= @github_user['name'] %>" />
+      I am <pre><%= @current_user.firstname %></pre>
 
-      and github login is
-      <input type="text" name="signup[lastname]" value="<%= @github_user['login'] %>" />
-      
+      and github login is <pre><%= @current_user.lastname %></pre>
       I am a
         <select name="signup[my_level]">
           <% User::LEVELS.each do |level| %>

@@ -1,7 +1,8 @@
 class NewDeveloperArbiter #< Valuable
   attr_accessor :firstname, :my_language, :my_level, :pair_language, :pair_level, :zipcode, :lastname
 
-  def initialize(atts = {})
+  def initialize(atts = {}, current_user)
+    @current_user = current_user
     self.firstname = atts[:firstname]
     self.lastname = atts[:lastname]
     self.my_language = atts[:my_language]
@@ -16,8 +17,11 @@ class NewDeveloperArbiter #< Valuable
   end
 
   def process
-    User.create(:firstname => self.firstname.capitalize, :lastname => self.lastname, :zipcode => self.zipcode, :language => self.language, :level => self.my_level)
-    # any other sign-up steps
+    @current_user.update_attributes({
+      :zipcode => self.zipcode, 
+      :language => self.language, 
+      :level => self.my_level
+    })
   end
 
   def target
