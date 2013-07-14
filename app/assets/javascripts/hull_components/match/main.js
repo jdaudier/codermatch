@@ -15,12 +15,12 @@ Hull.widget('match', {
 
   beforeRender: function(data) {
     data.languages = ['rb', 'js', 'py'];
-    data.levels    =  ['export', 'rock star'];
+    data.levels    =  ['expert', 'rock star'];
     console.warn("Form @", data);
   },
 
   events: {
-    'form submit': function(e) {
+    'submit form': function(e) {
       console.warn("Submitted Form !");
       if (e)  {
         e.preventDefault(); 

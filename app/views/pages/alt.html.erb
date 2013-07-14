@@ -8,15 +8,11 @@
   <div class="well" data-hull-widget="repos" data-hull-login='<%= @github_user['login'] %>'></div>
   <% end %>
 
-  <pre>Session: <%= session %></pre>
-
 </div>
   
 
 <hr>
 
-<% if @github_user %>
-<div data-hull-widget='match' data-hull-login="<%= @github_user['login'] %>"></div>
-<% end %>
+<%= render partial: 'signup_form' if @github_user %>
 
 
