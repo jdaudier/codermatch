@@ -7,6 +7,13 @@
   <%= csrf_meta_tags %>
   <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
   <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+  <%= javascript_include_tag Hull.js_url %>
+
+  <script type="text/javascript">
+  Hull.init({ appId: '<%= Hull.app_id %>', orgUrl: '<%= Hull.org_url %>' });
+  </script>
+
 </head>
 <body>
 

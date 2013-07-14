@@ -24,6 +24,9 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'hullio', '~> 0.2.1'
+gem 'handlebars_assets', '~> 0.14.1'
+
 gem 'jquery-rails'
 
 gem 'devise'

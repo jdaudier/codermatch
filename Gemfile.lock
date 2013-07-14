@@ -53,10 +53,23 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    faraday (0.8.7)
+      multipart-post (~> 1.1)
+    faraday_middleware (0.9.0)
+      faraday (>= 0.7.4, < 0.9)
     haml (4.0.3)
+      tilt
+    handlebars_assets (0.14.1)
+      execjs (>= 1.2.9)
+      sprockets (>= 2.0.3)
       tilt
     hike (1.2.3)
     hirb (0.7.1)
+    hullio (0.2.1)
+      faraday
+      faraday_middleware
+      mime-types
+      multi_json
     i18n (0.6.1)
     journey (1.0.4)
     jquery-rails (3.0.4)
@@ -68,6 +81,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.23)
     multi_json (1.7.7)
+    multipart-post (1.2.0)
     orm_adapter (0.4.0)
     polyglot (0.3.3)
     quiet_assets (1.0.2)
@@ -130,7 +144,9 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
   haml
+  handlebars_assets (~> 0.14.1)
   hirb
+  hullio (~> 0.2.1)
   jquery-rails
   quiet_assets
   rails (= 3.2.13)
