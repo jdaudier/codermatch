@@ -1,7 +1,16 @@
-<h4>Repos</h4>
-
-{{#repos}}
-<span class='label' data-hull-action="selectRepo" data-hull-repo="{{id}}">
-  {{full_name}}
-</span>
-{{/repos}}
+<table class='table'>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Forks</th>
+    <th>Watchers</th>
+  </tr>
+  {{#repos}}
+  <tr>
+    <td>{{full_name}}</td>
+    <td>{{description}}</td>
+    <td>{{forks_count}}</td>
+    <td>{{watchers_count}}</td>
+  </tr>
+  {{/repos}}
+</table>

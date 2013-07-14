@@ -26,32 +26,3 @@ Hull.configure do |config|
   HandlebarsAssets::Config.path_prefix = 'hull_components'
 
 end
-
-Hull.put('app', { extra: {
-  profile_fields: [
-      {
-        type: 'text',
-        name: 'name',
-        label: 'Your Name',
-        required: true,
-        error: 'Enter your name, please',
-        placeholder: ''
-      },
-      {
-        type: 'email',
-        name: 'email',
-        label: 'Your Email',
-        required: true,
-        error: 'Invalid Email',
-        placeholder: 'you@awesome.com'
-      },
-      {
-        type: 'select',
-        name: 'level',
-        label: 'Your Level',
-        required: true,
-        error: 'Invalid Level',
-        options: [{ label: 'Beginner', value: 'beginner' }, { label: 'Expert', value: 'expert' }]
-      }      
-    ]
-}})
