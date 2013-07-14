@@ -2,6 +2,10 @@ body {
   background-image: url(/assets/project_paper.png);
 }
 
+.sign-out {
+  color: white;
+}
+
 .github-button {
   position: absolute;
   z-index: 999;
