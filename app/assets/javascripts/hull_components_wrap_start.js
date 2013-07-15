@@ -1,0 +1,1 @@
+Hull.require(['handlebars'], function(Handlebars) { 
