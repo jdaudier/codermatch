@@ -4,7 +4,18 @@
       <li class="name"><h1><a href="#">CoderMatch</a></h1></li>
       <li><%= image_tag("codermatch-logo.svg", :alt => "CoderMatch Logo", :class => "brand") %>
       </li>
-      <li><div class="github-button" data-hull-widget='identity@hull' data-hull-provider='github'></div></li>
+      <li>
+        <div class="github-button">        
+          <% if @current_user %>
+          Logged in as <%= @current_user.name %>
+          <br>
+          <a href="#" class="sign-out" onclick='Hull.logout()'>Git Out</a>
+          <% else %>
+          <button class="btn" onclick="Hull.login('github')">Login with Github</button>
+          <% end %>
+        </div>
+
+      </li>
     </ul>
   </div>
 </div>
