@@ -11,7 +11,7 @@
         token nerd in your area:
         <%- @results.each do |result| %>
           <div class="results-img">
-            <%= image_tag result.picture(100) %>
+            <%= image_tag gravatar(result, 100) %>
           </div>
           <div class="results-contact">
             <%= link_to result.name, user_path(result.login) %> is a great match for you! You can contact this rockstar hacker at: 
@@ -31,7 +31,7 @@
 
           <%- @results.each do |result| %>
             <div class="results-img">
-              <%= image_tag result.picture(100) %>
+              <%= image_tag gravatar(result, 100) %>
             </div>
             <div class="results-contact">
               <%= link_to result.name, user_path(result.login) %> is a great match for you! You can contact this rockstar hacker at: 

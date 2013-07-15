@@ -11,10 +11,5 @@ class User < ActiveRecord::Base
     user.update_attributes({ email: hull_user['email'], name: hull_user['name'] })
     user
   end
-
-  def picture(size=100, default='https://dl.dropboxusercontent.com/u/125982/codermatch/stewie.gif')
-    gravatar_id = Digest::MD5.hexdigest(self.email)
-    "//gravatar.com/avatar/#{gravatar_id}.png?s=#{size}&d=#{default}"
-  end
 end
 
