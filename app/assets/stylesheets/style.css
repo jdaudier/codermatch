@@ -2,6 +2,18 @@ body {
   background-image: url(/assets/project_paper.png);
 }
 
+.signup-form, .matches {
+  margin-top: 160px;
+}
+
+.span8 {
+  margin-left: 0;
+}
+
+.span2 {
+  margin-left: 0;
+}
+
 .sign-out {
   color: white;
 }
@@ -78,6 +90,13 @@ body {
 .match-me-btn {
    padding: 12px;
    margin-bottom: 12px;
+   margin-left: 15px;
+}
+
+#form-header {
+  text-align: center;
+  color: #535353;
+  font-size: 3.2em;
 }
 
 .span4 h2, .span8 h2 {
@@ -223,4 +242,8 @@ footer {
 	20% { opacity: 0; -moz-transform: translateY(30px); }
 	80% { opacity: 0; }
     100% { opacity: 0; }
+}
+
+#match-text {
+  text-align: center;
 }

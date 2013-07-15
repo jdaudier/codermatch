@@ -1,12 +1,43 @@
-<h1>Matches</h1>
+<div class="container matches">
+  <div class="span2"></div>
 
-I found
-<%= @results.count %>
-nerds in your area:
+  <div class="span8 right-column">
+    <h1 id='form-header'>Matches</h1>
+    <hr>
+      <h3>
+        <% if @results.count == 1 %>
+        I found
+        <%= @results.count %>
+        nerd in your area:
+        <%- @results.each do |result| %>
+        <p>
+          <%= result.name %> is a great match for you! You can contact this rockstar hacker at: 
+          <%= result.email %>
+        <% end %>
+        </p>
 
-<%- @results.each do |result| %>
-<p><%= result.name %> is a great match for you! You can contact him/her at this email: 
-<%= result.email %>
-</p>
-<% end %>
+
+        <% elsif @results.count == 0 %>
+        It looks like no one likes to code in your area. It's time to move, buddy!
+         
+        <% else %>
+        I found
+        <%= @results.count %>
+        nerds in your area:
+        
+
+        <%- @results.each do |result| %>
+        <p>
+          <%= result.name %> is a great match for you! You can contact this rockstar hacker at: 
+          <%= result.email %>
+          <% end %>
+        </p>
+        <% end %>
+      </h3>
+  </div>
+  <div class="span2"></div>
+</div>
+
+
+
 
