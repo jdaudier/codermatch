@@ -86,7 +86,7 @@ body {
 }
 
 .hero-unit h1 {
-	color: #1399cd;
+	color: #1399cd !important;
 	font-size: 60px;
 }
 
