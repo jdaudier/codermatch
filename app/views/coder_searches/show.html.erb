@@ -11,7 +11,7 @@
         nerd in your area:
         <%- @results.each do |result| %>
         <p>
-          <%= image_tag result.picture(120) %>
+          <%= image_tag result.picture(100) %>
           <%= result.name %> is a great match for you! You can contact this rockstar hacker at: 
           <%= result.email %>
         <% end %>
@@ -29,7 +29,7 @@
 
         <%- @results.each do |result| %>
         <p>
-          <%= image_tag result.picture(120) %>
+          <%= image_tag result.picture(100) %>
           <%= result.name %> is a great match for you! You can contact this rockstar hacker at: 
           <%= result.email %>
           <% end %>

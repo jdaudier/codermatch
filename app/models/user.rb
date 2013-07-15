@@ -12,8 +12,8 @@ class User < ActiveRecord::Base
     user
   end
 
-  def picture(size=120, default='blank')
-    gravatar_id = Digest::MD5.hexdigest(self.email)
-    "//gravatar.com/avatar/#{gravatar_id}.png?s=#{size}&d=#{default}"
-   end
+  def picture(size=100, default='blank')
+    gravatar_id = Digest::MD5.hexdigest(self.email)
+    "//gravatar.com/avatar/#{gravatar_id}.png?s=#{size}&d=#{default}"
+  end
 end
