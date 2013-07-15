@@ -12,7 +12,7 @@
         <%- @results.each do |result| %>
         <p>
           <%= image_tag result.picture(120) %>
-          <%= result.name %> is a great match for you! You can contact this rockstar hacker at: 
+          <%= link_to result.name, user_path(result.login) %> is a great match for you! You can contact this rockstar hacker at: 
           <%= result.email %>
         <% end %>
         </p>
