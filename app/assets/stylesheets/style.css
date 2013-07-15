@@ -46,6 +46,37 @@ body {
 	left: -30px;
 }
 
+.no-results-photo {
+	text-align: center;
+	margin-top: 25px;
+}
+
+.no-results-photo img {
+	border-radius: 4px;
+}
+
+#no-results-header {
+	text-align: center;
+}
+
+.results-count {
+	color: #1399cd;
+}
+
+.results-img {
+	padding: 20px 10px 10px 0;
+}
+
+.results-img img {
+	border-radius: 4px;
+	float: left;
+}
+
+.results-contact {
+	padding-top: 10px;
+	display: inline-block;
+}
+
 .splash-image {
   width: 100%;
 }
@@ -82,7 +113,7 @@ body {
 }
 
 .right-column, .left-column {
-   padding: 20px;
+   padding: 30px;
    box-shadow: 0 0 2px #a9a9a9;
    min-height: 550px;
 }

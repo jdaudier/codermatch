@@ -7,33 +7,38 @@
       <h3>
         <% if @results.count == 1 %>
         I found
-        <%= @results.count %>
-        nerd in your area:
+        <span class="results-count"><%= @results.count %></span>
+        token nerd in your area:
         <%- @results.each do |result| %>
-        <p>
-          <%= image_tag result.picture(100) %>
-          <%= result.name %> is a great match for you! You can contact this rockstar hacker at: 
-          <%= result.email %>
-        <% end %>
-        </p>
-
+          <div class="results-img">
+            <%= image_tag result.picture(100) %>
+          </div>
+          <div class="results-contact">
+            <%= link_to result.name, user_path(result.login) %> is a great match for you! You can contact this rockstar hacker at: 
+            <a href="mailto:<%= result.email %>"><%= result.email %></a>
+          <% end %>
+          </div>
 
         <% elsif @results.count == 0 %>
-        It looks like no one likes to code in your area. It's time to move, buddy!
-         
+        <p id="no-results-header">Looks like no one likes to code in your area. <br />
+        It's time to move, buddy!</p>
+        <div class="no-results-photo"><img src="http://media1.giphy.com/media/K5CULzwBU03HG/original.gif" /></div>
+        
         <% else %>
         I found
-        <%= @results.count %>
+        <span class="results-count"><%= @results.count %></span>
         nerds in your area:
-        
 
-        <%- @results.each do |result| %>
-        <p>
-          <%= image_tag result.picture(100) %>
-          <%= result.name %> is a great match for you! You can contact this rockstar hacker at: 
-          <%= result.email %>
-          <% end %>
-        </p>
+          <%- @results.each do |result| %>
+            <div class="results-img">
+              <%= image_tag result.picture(100) %>
+            </div>
+            <div class="results-contact">
+              <%= link_to result.name, user_path(result.login) %> is a great match for you! You can contact this rockstar hacker at: 
+              <a href="mailto:<%= result.email %>"><%= result.email %></a>
+              <hr>
+            <% end %>
+            </div>
         <% end %>
       </h3>
   </div>
