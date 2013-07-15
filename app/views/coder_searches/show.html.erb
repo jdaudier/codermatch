@@ -6,40 +6,49 @@
     <hr>
       <h3>
         <% if @results.count == 1 %>
-        I found
-        <%= @results.count %>
-        nerd in your area:
-        <%- @results.each do |result| %>
-        <p>
-          <%= image_tag result.picture(120) %>
-          <%= link_to result.name, user_path(result.login) %> is a great match for you! You can contact this rockstar hacker at: 
-          <%= result.email %>
-        <% end %>
-        </p>
+          I found
+          <span class="results-count"><%= @results.count %></span>
+          token nerd in your area:
 
+          <%- @results.each do |result| %>
+            <div class="row-fluid">
+                <div class="results-img span2">
+                  <%= image_tag gravatar(result, 100) %>
+                </div>
+                <div class="results-contact span10">
+                  <%= link_to result.name, user_path(result.login) %> is a great match for you! You can contact this rockstar hacker at: 
+                  <a href="mailto:<%= result.email %>"><%= result.email %></a>
+                </div>
+            </div>
+          <% end %>
 
         <% elsif @results.count == 0 %>
-        It looks like no one likes to code in your area. It's time to move, buddy!
-         
-        <% else %>
-        I found
-        <%= @results.count %>
-        nerds in your area:
+          <p id="no-results-header">Looks like no one likes to code in your area. <br />
+          It's time to move, buddy!</p>
+          <div class="no-results-photo"><img src="http://media1.giphy.com/media/K5CULzwBU03HG/original.gif" /></div>
         
-
-        <%- @results.each do |result| %>
-        <p>
-          <%= image_tag result.picture(120) %>
-          <%= result.name %> is a great match for you! You can contact this rockstar hacker at: 
-          <%= result.email %>
+        <% else %>
+          I found
+          <span class="results-count"><%= @results.count %></span>
+          nerds in your area:
+      
+          <%- @results.each do |result| %>
+            <div class="row-fluid">
+                <div class="results-img span2">
+                  <%= image_tag gravatar(result, 100) %>
+                </div>
+                <div class="results-contact span10">
+                    <%= link_to result.name, user_path(result.login) %> is a great match for you! You can contact this rockstar hacker at: 
+                    <a href="mailto:<%= result.email %>"><%= result.email %></a>
+                    <hr>
+                </div>
+            </div>
           <% end %>
-        </p>
         <% end %>
       </h3>
   </div>
   <div class="span2"></div>
 </div>
-
 
 
 

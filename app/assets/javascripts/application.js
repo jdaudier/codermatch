@@ -12,3 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require hull_components
+//= require_tree .
