@@ -6,45 +6,50 @@
     <hr>
       <h3>
         <% if @results.count == 1 %>
-        I found
-        <span class="results-count"><%= @results.count %></span>
-        token nerd in your area:
-        <%- @results.each do |result| %>
-          <div class="results-img">
-            <%= image_tag gravatar(result, 100) %>
-          </div>
-          <div class="results-contact">
-            <%= link_to result.name, user_path(result.login) %> is a great match for you! You can contact this rockstar hacker at: 
-            <a href="mailto:<%= result.email %>"><%= result.email %></a>
-          <% end %>
-          </div>
-
-        <% elsif @results.count == 0 %>
-        <p id="no-results-header">Looks like no one likes to code in your area. <br />
-        It's time to move, buddy!</p>
-        <div class="no-results-photo"><img src="http://media1.giphy.com/media/K5CULzwBU03HG/original.gif" /></div>
-        
-        <% else %>
-        I found
-        <span class="results-count"><%= @results.count %></span>
-        nerds in your area:
+          I found
+          <span class="results-count"><%= @results.count %></span>
+          token nerd in your area:
 
           <%- @results.each do |result| %>
-            <div class="results-img">
-              <%= image_tag gravatar(result, 100) %>
+            <div class="row-fluid">
+                <div class="results-img span2">
+                  <%= image_tag gravatar(result, 100) %>
+                </div>
+                <div class="results-contact span10">
+                  <%= link_to result.name, user_path(result.login) %> is a great match for you! You can contact this rockstar hacker at: 
+                  <a href="mailto:<%= result.email %>"><%= result.email %></a>
+                </div>
             </div>
-            <div class="results-contact">
-              <%= link_to result.name, user_path(result.login) %> is a great match for you! You can contact this rockstar hacker at: 
-              <a href="mailto:<%= result.email %>"><%= result.email %></a>
-              <hr>
-            <% end %>
+          <% end %>
+        
+
+        <% elsif @results.count == 0 %>
+          <p id="no-results-header">Looks like no one likes to code in your area. <br />
+          It's time to move, buddy!</p>
+          <div class="no-results-photo"><img src="http://media1.giphy.com/media/K5CULzwBU03HG/original.gif" /></div>
+        
+        <% else %>
+          I found
+          <span class="results-count"><%= @results.count %></span>
+          nerds in your area:
+      
+          <%- @results.each do |result| %>
+            <div class="row-fluid">
+                <div class="results-img span2">
+                  <%= image_tag gravatar(result, 100) %>
+                </div>
+                <div class="results-contact span10">
+                    <%= link_to result.name, user_path(result.login) %> is a great match for you! You can contact this rockstar hacker at: 
+                    <a href="mailto:<%= result.email %>"><%= result.email %></a>
+                    <hr>
+                </div>
             </div>
+          <% end %>
         <% end %>
       </h3>
   </div>
   <div class="span2"></div>
 </div>
-
 
 
 
