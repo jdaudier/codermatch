@@ -115,7 +115,7 @@ body {
 .right-column, .left-column {
  padding: 30px;
  box-shadow: 0 0 2px #a9a9a9;
- min-height: 550px;
+ min-height: 460px;
 }
 
 .match-me-btn {
