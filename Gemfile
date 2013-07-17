@@ -43,6 +43,8 @@ gem 'quiet_assets'
 
 gem 'will_paginate'
 
+gem "geocoder"
+
 
 
 # To use ActiveModel has_secure_password

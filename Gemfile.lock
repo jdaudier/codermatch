@@ -57,6 +57,7 @@ GEM
       multipart-post (~> 1.1)
     faraday_middleware (0.9.0)
       faraday (>= 0.7.4, < 0.9)
+    geocoder (1.1.8)
     haml (4.0.3)
       tilt
     handlebars_assets (0.14.1)
@@ -144,6 +145,7 @@ DEPENDENCIES
   binding_of_caller
   coffee-rails (~> 3.2.1)
   devise
+  geocoder
   haml
   handlebars_assets (~> 0.14.1)
   hirb
