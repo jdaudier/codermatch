@@ -135,6 +135,16 @@ body {
 	text-align: center;
 }
 
+.span4 p {
+	padding-top: 23.9%;
+	letter-spacing: 0.09em;
+	text-align: right;
+}
+
+.span4 a {
+	color: #333435;
+}
+
 .form-inline h2 {
 	text-align: left;
 	line-height: 2;
@@ -277,4 +287,9 @@ footer {
 
 #match-text {
   text-align: center;
+}
+
+footer p span { 
+	color: #ff3578;
+	font-size: 1.4em;
 }
