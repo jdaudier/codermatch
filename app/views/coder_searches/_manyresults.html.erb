@@ -1,0 +1,16 @@
+I found
+<span class="results-count"><%= @results.count %></span>
+nerds in your area:
+
+<%- @results.each do |result| %>
+  <div class="row-fluid">
+      <div class="results-img span2">
+        <%= image_tag gravatar(result, 100) %>
+      </div>
+      <div class="results-contact span10">
+          <%= link_to result.name, user_path(result.login) %> is a great match for you! You can contact this rockstar hacker at: 
+          <a href="mailto:<%= result.email %>"><%= result.email %></a>
+          <hr>
+      </div>
+  </div>
+<% end %>
