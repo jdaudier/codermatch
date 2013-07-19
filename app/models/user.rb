@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   geocoded_by :zipcode
   after_validation :geocode
 
-  def zipcode_search
+  def nearby
     if user.geocoded?
       user.nearbys(20)
     end
