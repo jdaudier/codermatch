@@ -29,4 +29,5 @@ class NewDeveloperArbiter #< Valuable
   def search
     "/coder_search?language=#{pair_language}&level=#{pair_level}&zipcode=#{zipcode}"
   end
+
 end
