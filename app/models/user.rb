@@ -12,6 +12,15 @@ class User < ActiveRecord::Base
     user
   end
 
+  geocoded_by :zipcode
+  after_validation :geocode
+
+  def zipcode_search
+    if user.geocoded?
+      user.nearbys(20)
+    end
+  end
+
   # def picture(size=100, default='blank')
   #   gravatar_id = Digest::MD5.hexdigest(self.email)
   #   "//gravatar.com/avatar/#{gravatar_id}.png?s=#{size}&d=#{default}"
