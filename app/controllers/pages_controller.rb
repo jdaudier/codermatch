@@ -9,7 +9,7 @@ class PagesController < ApplicationController
   def signup
     arbiter = NewDeveloperArbiter.new( params[:signup], @current_user )
     arbiter.process
-    redirect_to arbiter.target
+    redirect_to arbiter.search
   end
 end
 
