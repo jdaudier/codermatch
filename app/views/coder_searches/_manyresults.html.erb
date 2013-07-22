@@ -2,6 +2,9 @@ I found
 <span class="results-count"><%= @results.count %></span>
 nerds in your area:
 
+<!-- @results is an array of the people that match your search and we're iterating through them -->
+<!-- user_path(result.login) links to the user profile view -->
+
 <%- @results.each do |result| %>
   <div class="row-fluid">
       <div class="results-img span2">
@@ -13,6 +16,8 @@ nerds in your area:
         
       </div>      
   </div>
+
+  <!-- random danger text  -->
 
 
   <div class="row-fluid"><hr></div>
