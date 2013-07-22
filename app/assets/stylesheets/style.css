@@ -65,11 +65,11 @@ body {
 
 .results-img {
 	padding: 20px 10px 10px 0;
+	float: left;
 }
 
 .results-img img {
 	border-radius: 4px;
-	float: left;
 }
 
 .results-contact {
