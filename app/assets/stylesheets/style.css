@@ -25,6 +25,30 @@ body {
   top: 16px;
 }
 
+
+
+/* ---- Makes placeholder error message RED --- */
+
+#inputError::-webkit-input-placeholder {
+	color: #b94a48;
+}
+
+#inputError::-moz-placeholder {
+	color: #b94a48;
+}
+
+#inputError:-moz-placeholder {
+	color: #b94a48;
+}
+
+#inputError:-ms-input-placeholder {
+	color: #b94a48;
+}
+
+/* ------ Above makes placeholder error msg RED ---- */
+
+
+
 .navbar-inverse {
   background-image: url(/assets/bg_header.png);
 	background-color: transparent;

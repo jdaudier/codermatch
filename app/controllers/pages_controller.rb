@@ -17,7 +17,7 @@ class PagesController < ApplicationController
     if arbiter.process    
       redirect_to arbiter.search
     else
-      flash[:notice] = "Please enter a 5-digit zipcode."
+      flash[:notice] = "This is here just for our if statement in the form that makes the zipcode input red. Must remove later."
       redirect_to root_path
     end
   end

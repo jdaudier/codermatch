@@ -33,9 +33,20 @@
               <option><%= language.language %></option>
             <% end %>
           </select>
-  coder to pair program with around <input type="text" pattern="[0-9]*" name="signup[zipcode]" placeholder="5-digit zip code"> .
+  coder to pair program with around 
+
+  <% if notice.present? %>
+    <span class="control-group error">
+      <span class="controls">
+        <input id="inputError" type="text" pattern="[0-9]*" name="signup[zipcode]" placeholder="enter 5-digit zipcode"> .
+      </span>
+    </span>
+  <% else %>
+    <input type="text" pattern="[0-9]*" name="signup[zipcode]" placeholder="5-digit zip code"> .
+  <% end %>
+  
       </h2>
-      <%= render partial: "shared/errormessages" %>
+      
       <div class="span6 match-me-btn">
         <button class="btn btn-large btn-block btn-primary" type="submit"><h1 id="match-text">MATCH ME, BABY!</h1></button>
       </div>
