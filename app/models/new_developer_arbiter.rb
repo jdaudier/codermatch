@@ -24,11 +24,14 @@ class NewDeveloperArbiter #< Valuable
 
   def process
     # This will update and save to the User table
+
+    #With validation, this method returns true if current_user is successfully updated(zipcode is proper and has 5 digits). Otherwise it returns false.
     @current_user.update_attributes({
       :zipcode => self.zipcode, 
       :language => self.language, #This is plugged into the language method above
       :level => self.my_level
     })
+
   end
 
   def search

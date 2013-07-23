@@ -12,14 +12,15 @@ class PagesController < ApplicationController
 
     arbiter = NewDeveloperArbiter.new( params[:signup], @current_user ) 
     # @current_user is passed in during the creation of the arbiter (new_developer_arbiter.rb)
-    arbiter.process
 
-    if params[:signup][:zipcode].blank?
-      
-    else
+    # arbiter.process
+    if arbiter.process    
       redirect_to arbiter.search
+    else
+      flash[:notice] = "Please enter a 5-digit zipcode."
+      redirect_to root_path
     end
-
   end
+
 end
 

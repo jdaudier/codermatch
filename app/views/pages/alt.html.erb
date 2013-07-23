@@ -1,7 +1,10 @@
+<!-- if current_user is logged in, show the signup form -->
 <% if @current_user %>
   <div class="container signup-form">
   <%= render partial: 'signup_form'%>
   </div>
+
+<!-- if current_user not logged in, show cool animation -->
 <% else %>
 
 <div class="container">
