@@ -9,7 +9,9 @@
           <% if @current_user %>
           Logged in as <%= @current_user.name %>
           <br>
-          <a href="#" class="sign-out" onclick='Hull.logout()'>Git Out</a>
+          <!-- This resolves the bug of logging out from user profile and redirecting to homepage: onclick="Hull.logout().then(function () {window.location = '/'})-->
+
+          <a href="#" class="sign-out" onclick="Hull.logout().then(function () {window.location = '/'})">Git Out</a>
           <% else %>
           <button class="btn" onclick="Hull.login('github')"><i class="icon-github icon-large"></i> Log in with GitHub</button>
           <% end %>
@@ -19,3 +21,4 @@
     </ul>
   </div>
 </div>
+
