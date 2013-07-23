@@ -5,4 +5,6 @@ class UsersController < ApplicationController
     @user = User.find_by_lastname(params[:id])
   end
 
+  
+
 end
