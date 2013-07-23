@@ -3,6 +3,9 @@ class User < ActiveRecord::Base
 
   attr_accessible :language_id, :language, :level, :zipcode, :firstname, :lastname, :email, :name, :login
 
+  #Enforces presence of zipcode on signup form
+  validates_presence_of :zipcode, :on => :update
+
   belongs_to :language
   def self.from_hull_user hull_user_id
     hull_user = Hull.get(hull_user_id)
