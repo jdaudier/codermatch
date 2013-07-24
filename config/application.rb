@@ -59,6 +59,8 @@ module Codermatch
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
+    # This is for the bug of repo on user page not showing up after push to heroku
+    HandlebarsAssets::Config.path_prefix = 'hull_components'
     config.assets.initialize_on_precompile = false 
     # Added this for Heroku precompilation bug: https://devcenter.heroku.com/articles/rails-asset-pipeline#troubleshooting
   end

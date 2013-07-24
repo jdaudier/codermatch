@@ -19,6 +19,6 @@ Hull.configure do |config|
   # == hull.js version
   config.js_url = "http://hull-js.s3.amazonaws.com/develop/hull.js"
 
-  HandlebarsAssets::Config.path_prefix = 'hull_components'
+  
 
 end
