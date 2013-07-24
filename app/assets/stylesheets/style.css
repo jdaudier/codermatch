@@ -2,7 +2,7 @@ body {
 	background-image: url(/assets/project_paper.png);
 }
 
-.signup-form, .matches {
+.signup-form, .matches, .profile-container {
 	margin-top: 160px;
 }
 
@@ -24,8 +24,6 @@ body {
   left:66%;
   top: 16px;
 }
-
-
 
 /* ---- Makes placeholder error message RED --- */
 
@@ -137,9 +135,16 @@ body {
 }
 
 .right-column, .left-column {
- padding: 30px;
- box-shadow: 0 0 2px #a9a9a9;
- min-height: 460px;
+	padding: 30px;
+	box-shadow: 0 0 2px #a9a9a9;
+	min-height: 460px;
+}
+
+.profile-container {
+	background: rgba(255, 255, 255, 0.4);
+	padding: 30px;
+ 	box-shadow: 0 0 2px #a9a9a9;
+ 	min-height: 460px;
 }
 
 .match-me-btn {
