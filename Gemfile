@@ -34,6 +34,8 @@ gem 'handlebars_assets', '~> 0.14.1'
 
 gem 'jquery-rails'
 
+gem 'figaro'
+
 gem 'devise'
 
 gem 'hirb'
