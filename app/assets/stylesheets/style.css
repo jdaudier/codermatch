@@ -322,3 +322,7 @@ footer p span {
 	color: #ff3578;
 	font-size: 1.4em;
 }
+
+.header {
+	height: 80px;
+}
