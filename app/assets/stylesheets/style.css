@@ -326,3 +326,9 @@ footer p span {
 .header {
 	height: 80px;
 }
+
+/*fixes issue where user without avatar sees huge octocat when they visit user profile on comment side of page*/
+.hull-comments__form img {
+	width: 80px;
+	height: 80px;
+}
