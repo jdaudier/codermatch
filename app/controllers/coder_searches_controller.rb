@@ -3,7 +3,7 @@ class CoderSearchesController < ApplicationController
   def show
 
     
-    params[:per_page] ||= 1 # sets default number of results per pages
+    params[:per_page] ||= 10 # sets default number of results per pages
     params[:page] ||= 1 # sets default starting number for pages
 
     if !@current_user
