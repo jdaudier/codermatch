@@ -189,7 +189,7 @@ body {
 	color: white;
 }
 
-.span8 hr {
+.span8 hr, .span11 hr {
 	border-top: 1px solid #eeeeee;
   border-bottom: 1px solid #dad9d9;
 }
