@@ -9,6 +9,11 @@ nerds in your area:
   <div class="row-fluid">
       <div class="results-img span2">
         <%= image_tag gravatar(result, 100) %>
+
+        <% if result.geocoded? %>
+          <h6><%= result.distance_from([@current_user.latitude, @current_user.longitude]).round(1) %> miles away</h6>
+        <% end %>
+
       </div>
       <div class="results-contact span10">
           <%= link_to result.name, user_path(result.login) %> is a great match for you! You can contact this rockstar hacker at: 
