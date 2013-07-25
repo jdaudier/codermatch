@@ -5,7 +5,7 @@ nerds in your area:
 <!-- @results is an array of the people that match your search and we're iterating through them -->
 <!-- user_path(result.login) links to the user profile view -->
 
-<%- @results.each do |result| %>
+<% @results.each do |result| %>
   <div class="row-fluid">
       <div class="results-img span2">
         <%= image_tag gravatar(result, 100) %>
@@ -23,3 +23,4 @@ nerds in your area:
   </div>
   <div class="row-fluid"><hr></div>
 <% end %>
+<span class = "pagination"><%= will_paginate @results %></span>
