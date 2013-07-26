@@ -1,12 +1,12 @@
 Hull.widget('activity', {
-  templates: ['activity'],
+  templates: ['github-activity'],
 
   refreshEvents: ['model.hull.me.change'],
 
   datasources: {
     activity: function() {
       if (this.options.login) {
-        return this.api({ path: 'users/' + this.options.login + '/events', provider: 'github', params: { per_page: 10 } });  
+        return this.api({ path: 'users/' + this.options.login + '/events', provider: 'github' });
       }
     }
   },
@@ -16,7 +16,7 @@ Hull.widget('activity', {
   },
 
   beforeRender: function(data) {
-    console.warn("Rendering...", data.activity);
+    console.warn("Rendering... Activity", data.activity);
   },
 
   actions: {
