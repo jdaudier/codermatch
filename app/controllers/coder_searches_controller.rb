@@ -14,7 +14,7 @@ class CoderSearchesController < ApplicationController
       if @current_user.geocoded?
 
         # The .page(params[:page].to_i).per_page(params[:per_page].to_i) paginates the @results search query 
-        @results = @current_user.nearbys(20).where('languages.language' => params[:language], :level => params[:level]).joins(:language).where('users.id != ?', @current_user.id).page(params[:page].to_i).per_page(params[:per_page].to_i)
+        @results = @current_user.nearbys(30).where('languages.language' => params[:language], :level => params[:level]).joins(:language).where('users.id != ?', @current_user.id).page(params[:page].to_i).per_page(params[:per_page].to_i)
       end
     end
   end
