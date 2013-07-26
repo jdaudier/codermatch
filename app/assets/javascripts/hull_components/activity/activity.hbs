@@ -1,0 +1,38 @@
+<ul class="list text-list">
+{{#news}}
+  <li>
+    <span class="{{icon}}"></span>
+    <div class="text-body">
+      <p>
+        <a data-transition="slide-in" href="#/users/{{event.actor.login}}">{{event.actor.login}}</a>
+
+        {{summary}}
+
+        {{#event}}
+        
+        {{#if repo.id}}
+        <a data-transition="slide-in" href="#/repos/{{repo.name}}">{{repo.name}}</a>
+        {{/if}}
+
+        {{#payload}}
+
+        {{#forkee}}
+        to 
+        <a data-transition="slide-in" href="#/repos/{{full_name}}">{{full_name}}</a>
+        {{/forkee}} 
+
+        {{#target}}
+        <a data-transition="slide-in" href="#/users/{{login}}">{{login}}</a>
+        {{/target}}
+
+        {{/payload}}
+
+        {{/event}}
+        
+        <div class="time">{{fromNow event.created_at}}</div>
+
+      </p>
+    </div>
+  </li>
+{{/news}}
+</ul>
