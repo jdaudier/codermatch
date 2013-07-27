@@ -153,6 +153,16 @@ body {
 	margin-left: 15px;
 }
 
+sup {
+	font-weight: lighter;
+}
+
+.disclaimer { 
+	clear: left; 
+	margin-left: 27px;
+	color: #7e7e7e;
+}
+
 #form-header {
 	text-align: center;
 	color: #535353;
