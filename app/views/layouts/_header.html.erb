@@ -9,7 +9,7 @@
           <% if @current_user %>
           <!-- Original text: -->      
           <!-- Logged in as <%= @current_user.name %> --> 
-          <%= link_to "My Profile", user_path(@current_user.name), :class => "profile-link" %></span>
+          <%= link_to "My Profile", user_path(@current_user.login), :class => "profile-link" %></span>
           <br>
           <!-- This resolves the bug of logging out from user profile and redirecting to homepage: onclick="Hull.logout().then(function () {window.location = '/'})-->
 
