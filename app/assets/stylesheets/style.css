@@ -18,6 +18,10 @@ body {
   color: white;
 }
 
+.profile-link {
+	color: #535353;
+}
+
 .github-button {
   position: absolute;
   z-index: 999;
@@ -346,7 +350,6 @@ footer p span {
 .results-img h6 {
 	text-align: center;
 }
-
 
 .pagination {
 	text-align: center;
