@@ -12,10 +12,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    # @user = User.find_by_login(params[:id])
     @user = @current_user
     @user.destroy
-    session[:current_user] = nil
+    session[:current_user] = nil #not sure about this code
     redirect_to root_path
   end
 
