@@ -6,7 +6,9 @@ class UsersController < ApplicationController
   end
 
   def notify
-  	puts params
+  	# if !params[:data][:content].empty?
+  		#
+  	# end
   end
 
 end
