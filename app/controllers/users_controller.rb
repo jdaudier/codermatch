@@ -5,6 +5,8 @@ class UsersController < ApplicationController
     @user = User.find_by_name(params[:id])
   end
 
-  
+  def notify
+  	puts params
+  end
 
 end

@@ -1,7 +1,7 @@
 Codermatch::Application.routes.draw do
 
   # root :to => 'pages#alt'
-  
+
   root :to => 'pages#alt'
   post '/signup' => 'pages#signup'
 
@@ -9,6 +9,9 @@ Codermatch::Application.routes.draw do
   resources :languages
   resources :levels
   resources :users
+
+  post 'users/notify' => 'users#notify'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
