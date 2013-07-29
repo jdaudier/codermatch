@@ -7,5 +7,5 @@
 if Rails.env.development? or Rails.env.test?
 	Codermatch::Application.config.secret_token = 'a6c135783f98bce06f27003c0eb006e40672e053bf270f435d59824fa4647657373b315191c1a31801a25f1cdcd56a8512f7b6cdf5559e0f06cda77c54744a48'
 elsif Rails.env.production?
-	ENV["SECRET_TOKEN"]
+	Codermatch::Application.config.secret_token = ENV["SECRET_TOKEN"]
 end
