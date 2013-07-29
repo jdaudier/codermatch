@@ -1,58 +1,57 @@
+<div class="span2"></div>
 
-  <div class="span2"></div>
+<div class="span8 right-column">
+  <h1 id='form-header'>Who are you?</h1>
+  <hr>
+  <form action="/signup" method="post" class="form-inline largeinput">
+    <h2>
+      <!-- I am <pre><%= @current_user.name %></pre>
 
-  <div class="span8 right-column">
-    <h1 id='form-header'>Who are you?</h1>
-    <hr>
-    <form action="/signup" method="post" class="form-inline largeinput">
-      <h2>
-        <!-- I am <pre><%= @current_user.name %></pre>
+      and my GitHub login is <pre><%= @current_user.login %></pre> -->
+      I am a
+        <select name="signup[my_level]">
+          <% User::LEVELS.each do |level| %>
+            <option><%= level %></option>
+          <% end %>
+        </select>
+        <select name="signup[my_language]">
+          <% Language.all.each do |language| %>
+            <option><%= language.language %></option>
+          <% end %>
+        </select>
 
-        and my GitHub login is <pre><%= @current_user.login %></pre> -->
-        I am a
-          <select name="signup[my_level]">
-            <% User::LEVELS.each do |level| %>
-              <option><%= level %></option>
-            <% end %>
-          </select>
-          <select name="signup[my_language]">
-            <% Language.all.each do |language| %>
-              <option><%= language.language %></option>
-            <% end %>
-          </select>
+        hacker looking to find another
 
-          hacker looking to find another 
+        <select name="signup[pair_level]">
+          <% User::LEVELS.each do |level| %>
+            <option><%= level %></option>
+          <% end %>
+        </select>
+        <select name="signup[pair_language]">
+          <% Language.all.each do |language| %>
+            <option><%= language.language %></option>
+          <% end %>
+        </select>
+coder to pair program with around
 
-          <select name="signup[pair_level]">
-            <% User::LEVELS.each do |level| %>
-              <option><%= level %></option>
-            <% end %>
-          </select>
-          <select name="signup[pair_language]">
-            <% Language.all.each do |language| %>
-              <option><%= language.language %></option>
-            <% end %>
-          </select>
-  coder to pair program with around 
-
-  <% if notice.present? %>
-    <span class="control-group error">
-      <span class="controls">
-        <input id="inputError" type="text" pattern="[0-9]*" name="signup[zipcode]" placeholder="enter 5-digit zipcode"> .
-      </span>
+<% if notice.present? %>
+  <span class="control-group error">
+    <span class="controls">
+      <input id="inputError" type="text" pattern="[0-9]*" name="signup[zipcode]" placeholder="enter 5-digit zipcode"> .
     </span>
-  <% else %>
-    <input type="text" pattern="[0-9]*" name="signup[zipcode]" placeholder="5-digit zip code"> .
-  <% end %>
-  
-      </h2>
-      
-      <div class="span6 match-me-btn">
-        <button class="btn btn-large btn-block btn-primary" type="submit"><h1 id="match-text">MATCH ME, BABY!<sup>*</sup></h1></button>
-      </div>
-        <p class="disclaimer">* You'll be added to our database so other local coders can contact you via email as well.</p>
-    </form>
-  </div>
+  </span>
+<% else %>
+  <input type="text" pattern="[0-9]*" name="signup[zipcode]" placeholder="5-digit zip code"> .
+<% end %>
 
-  <div class="span2"></div>
+    </h2>
+
+    <div class="span6 match-me-btn">
+      <button class="btn btn-large btn-block btn-primary" type="submit"><h1 id="match-text">MATCH ME, BABY!<sup>*</sup></h1></button>
+    </div>
+      <p class="disclaimer">* You'll be added to our database so other local coders can contact you via email as well.</p>
+  </form>
+</div>
+
+<div class="span2"></div>
 
