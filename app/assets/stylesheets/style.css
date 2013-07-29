@@ -315,6 +315,11 @@ sup {
 	text-align: center;
 }
 
+.delete {
+	text-decoration: none;
+	color: #b94a48;
+}
+
 footer {
   background-image: url(/assets/footer.png);
 	margin-top: 35px;
