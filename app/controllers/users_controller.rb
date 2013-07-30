@@ -15,7 +15,10 @@ class UsersController < ApplicationController
     @user = @current_user
     @user.destroy
     session[:current_user] = nil #not sure about this code
-    redirect_to root_path
+
+    respond_to do |format|
+      format.json
+    end
   end
 
 end

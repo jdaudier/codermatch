@@ -9,8 +9,7 @@
 		    <!-- If you're a current user and your GitHub login name is equal to the Hull id, then you will see the delete button -->
 		    	<% if @current_user && @current_user.login == @id %>
 			    	<p>
-							<%= button_to 'Delete your account', { action: "destroy", id: @current_user.id },
-							method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-small delete" %>
+							<a href="#" class="btn btn-small delete" onclick="Hull.logout().then(destroyUser(<%=@current_user.id%>))">Delete my account</a>
 			  		</p>
 		  		<% end %>
 		  </div>
