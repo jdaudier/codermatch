@@ -4,6 +4,5 @@ var destroyUser = function(userId){
     url: "/users/" + userId,
     dataType: "json",
     data: {"_method":"delete"},
-
   });
 };
