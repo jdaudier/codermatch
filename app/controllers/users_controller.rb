@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     session[:current_user] = nil #not sure about this code
 
     respond_to do |format|
-      format.json
+      format.json { render nothing: true, status: 200 }
     end
   end
 
