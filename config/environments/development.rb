@@ -32,6 +32,6 @@ Codermatch::Application.configure do
   # Do not compress assets
   config.assets.compress = false
 
-  # Expands the lines which load the assets
-  config.assets.debug = true
+  # WORKAROUND: Change to true to enable debugging javascript as separate files.
+  config.assets.debug = false
 end
