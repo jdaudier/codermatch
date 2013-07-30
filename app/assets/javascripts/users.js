@@ -1,7 +1,3 @@
-var redirectUser = function(){
-  window.location = '/';
-};
-
 var destroyUser = function(userId){
   $.ajax({
     type: "POST",
@@ -10,6 +6,4 @@ var destroyUser = function(userId){
     data: {"_method":"delete"},
 
   });
-  
-  redirectUser();
 };
