@@ -75,6 +75,12 @@ body {
 	left: -30px;
 }
 
+.subheading h3 {
+	text-align: center;
+	color: #1399cd;
+	letter-spacing: .03em;
+}
+
 .no-results-photo {
 	text-align: center;
 	margin-top: 25px;

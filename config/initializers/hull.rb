@@ -22,9 +22,9 @@ Hull.configure do |config|
   # This code below was moved to application.rb
   # HandlebarsAssets::Config.path_prefix = 'hull_components'
 
-  Rails.application.config.middleware.use Hull::Middlewares::Hook,
-  secret: Hull.app_secret do |event, request|
-    #Handle event here...this code will be executed every time you have a hook call
-  end
+  # Rails.application.config.middleware.use Hull::Middlewares::Hook,
+  # secret: Hull.app_secret do |event, request|
+  #   #Handle event here...this code will be executed every time you have a hook call
+  # end
 
 end
