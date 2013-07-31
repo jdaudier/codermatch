@@ -17,14 +17,12 @@ Hull.configure do |config|
   config.authenticate_users = false
 
   # == hull.js version
-  config.js_url = "http://hull-js.s3.amazonaws.com/develop/hull.js"
+  config.js_url = "https://hull-js.s3.amazonaws.com/develop/hull.js"
 
-  # This code below was moved to application.rb
-  # HandlebarsAssets::Config.path_prefix = 'hull_components'
+end
 
-  # Rails.application.config.middleware.use Hull::Middlewares::Hook,
-  # secret: Hull.app_secret do |event, request|
-  #   #Handle event here...this code will be executed every time you have a hook call
-  # end
+require 'hull/middlewares/hook'
 
+Rails.application.config.middleware.use Hull::Middlewares::Hook, secret: Hull.app_secret do |event, request|
+  HullEventHandler.handle(event, request)
 end
