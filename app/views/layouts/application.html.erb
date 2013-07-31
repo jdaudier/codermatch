@@ -1,42 +1,43 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Find coding buddies to pair program with | CoderMatch</title>
-  
-  <%= csrf_meta_tags %>
-  
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <%= javascript_include_tag Hull.js_url %>
-  <%= javascript_include_tag "hull_components", debug: false %>
+  <head>
+    <title>Find coding buddies to pair program with | CoderMatch</title>
 
-  <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
-  <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= csrf_meta_tags %>
 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <%= javascript_include_tag Hull.js_url %>
+    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "hull_components" %>
 
-  <script type="text/javascript">
-  Hull.init({ appId: '<%= Hull.app_id %>', orgUrl: '<%= Hull.org_url %>' });
-  Hull.on('hull.auth.**', function() { document.location.reload(); });
-  </script>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= favicon_link_tag 'favicon.ico' %>
 
-  <!-- Google Analytics -->
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <script type="text/javascript">
+    Hull.init({ appId: '<%= Hull.app_id %>', orgUrl: '<%= Hull.org_url %>' });
+    Hull.on('hull.auth.**', function() { document.location.reload(); });
+    </script>
 
-    ga('create', 'UA-42676595-1', 'codermatch.me');
-    ga('send', 'pageview');
-  </script>
-</head>
-<body>
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-
-  <%= render partial: "layouts/header" %>
-  
-  <%= yield %>
-  <%= render partial: "layouts/footer" %>
-</body>
+      ga('create', 'UA-42676595-1', 'codermatch.me');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <%= render partial: "layouts/header" %>
+      <%= yield %>
+      <div class="push"></div>
+    </div>
+    <%= render partial: "layouts/footer" %>
+  </body>
 </html>

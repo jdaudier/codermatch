@@ -11,4 +11,3 @@ Language.create(:language => 'Python')
 Language.create(:language => 'JavaScript')
 Language.create(:language => 'HTML/CSS')
 Language.create(:language => 'PHP')
-

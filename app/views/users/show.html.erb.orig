@@ -6,7 +6,9 @@
 		  <div class="span5">
 		    <h4>Repos</h4>
 		    <div data-hull-widget='repos' data-hull-login='<%= @id %>'></div>
+<<<<<<< HEAD
 		    <div data-hull-widget='activity' data-hull-login='<%= @id %>'></div>
+=======
 		    <!-- If you're a current user and your GitHub login name is equal to the Hull id, then you will see the delete button -->
 		    	<% if @current_user && @current_user.login == @id %>
 			    	<p>
@@ -14,6 +16,7 @@
 							<a href="#" class="btn btn-small delete" id="delete-account" onclick="Hull.logout().then(function () {window.location = '/'});destroyUser(<%=@current_user.id%>)">Delete my account</a>
 			  		</p>
 		  		<% end %>
+>>>>>>> master
 		  </div>
 		  <div class="span5">
 		    <h4>Wall</h4>
@@ -23,4 +26,7 @@
 	</div>
 </div>
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> master

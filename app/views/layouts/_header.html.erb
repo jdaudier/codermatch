@@ -7,7 +7,9 @@
       <li>
         <div class="github-button">        
           <% if @current_user %>
-          Logged in as <%= @current_user.name %>
+          <!-- Original text: -->      
+          <!-- Logged in as <%= @current_user.name %> --> 
+          <%= link_to "My Profile", user_path(@current_user.login), :class => "profile-link" %></span>
           <br>
           <!-- This resolves the bug of logging out from user profile and redirecting to homepage: onclick="Hull.logout().then(function () {window.location = '/'})-->
 
