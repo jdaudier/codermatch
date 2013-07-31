@@ -29,7 +29,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'hullio', '~> 0.2.1'
+gem 'hullio', :git => "git://github.com/hull/hull-ruby.git"
 gem 'handlebars_assets', '~> 0.14.1'
 
 gem 'jquery-rails'
