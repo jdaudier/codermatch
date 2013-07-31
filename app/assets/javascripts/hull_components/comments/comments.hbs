@@ -23,13 +23,17 @@
       {{#comments}}
         <li class="media" data-hull-comment-id="{{id}}">
           <div class="pull-left">
-            <img class="media-object img-rounded" src="{{user.picture}}" alt="{{user.name}}">
+            <a href = "{{user.name}}">
+              <img class="media-object img-rounded" src="{{user.picture}}" alt="{{user.name}}">
+            </a>
           </div>
           <div class="media-body">
             <div class="pull-right">
               <small class="muted">{{fromNow updated_at}}</small>
             </div>
-            <h4 class="media-heading">{{user.name}}</h4>
+            <a href = "{{user.name}}">
+              <h4 class="media-heading">{{user.name}}</h4>
+            </a>
             <div class="hull-comments__description">
               {{description}}
             </div>
