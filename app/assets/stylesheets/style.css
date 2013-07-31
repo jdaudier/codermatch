@@ -171,6 +171,10 @@ sup {
 	font-weight: lighter;
 }
 
+.media-heading {
+	color: #535353;
+}
+
 .disclaimer {
 	clear: left;
 	margin-left: 27px;
