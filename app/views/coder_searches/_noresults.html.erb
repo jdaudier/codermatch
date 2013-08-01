@@ -1,18 +1,21 @@
 <p id="no-results-header">Looks like no one likes to code in your area. <br />
 It's time to move, buddy!</p>
 
-<!-- The level and language are passed through the search url. -->
-<%= form_tag '/remotable', method: 'POST', class: 'remotable' do %>
-  <%= hidden_field_tag :level, "#{params[:level]}" %>
-  <%= hidden_field_tag :language, "#{params[:language]}" %>
-  <%= submit_tag "I'm interested in remote pairing", class: 'btn btn-primary' %>
+<% if @remotable_results.count > 0 %>
+  <!-- The level and language are passed through the search url. -->
+  <%= form_tag '/remotable', method: 'POST', class: 'remotable' do %>
+    <%= hidden_field_tag :level, "#{params[:level]}" %>
+    <%= hidden_field_tag :language, "#{params[:language]}" %>
+    <%= submit_tag "I'm interested in remote pairing", class: 'btn btn-primary' %>
+  <% end %>
+
+  <div class="no-results-photo">
+    <img src="http://media1.giphy.com/media/K5CULzwBU03HG/original.gif" />
+  </div>
+
+  <% else %>
+    <div class="no-results-photo">
+      <img src="http://media1.giphy.com/media/K5CULzwBU03HG/original.gif" />
+    </div>
+    
 <% end %>
-
-<div class="no-results-photo">
-  <img src="http://media1.giphy.com/media/K5CULzwBU03HG/original.gif" />
-</div>
-
-
-
-
-

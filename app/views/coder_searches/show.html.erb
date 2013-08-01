@@ -15,11 +15,11 @@
             <%= render partial: "manyresults" %>
           <% end %>
 
-          <!-- The instance where current user is remotable. Renders remotable results. -->
+          <!-- If there are remotable users, renders remotable results. -->
         <% else %>
           <% if @remotable_results.count == 1 %>
             <%= render partial: "one_remotable_result" %>          
-          <% else %>         
+          <% elsif @remotable_results.count > 1 %>         
             <%= render partial: "remotable_results" %>
           <% end %>
         <% end %>
