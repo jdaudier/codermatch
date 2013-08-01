@@ -272,14 +272,14 @@ sup {
 
 .remotable {
   text-align: center;
+  margin-top: 2.5%;
 }
 
-.remotable .btn {
-  padding: 1% 3%;
-}
-
-input[type=submit]{
-  letter-spacing: 0.1em;
+.remotable input[type=submit]{
+  letter-spacing: 0.09em;
+  padding: 1.5% 3%;
+  font-size: .7em;
+  font-weight: 200;
 }
 
 

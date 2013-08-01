@@ -1,9 +1,8 @@
 I found
 <span class="results-count"><%= @remotable_results.count %></span>
-nerd(s) that you can pair with remotely:
+nerd that you can pair with remotely:
 
-
-<% @remotable_results.each do |result| %>
+<%- @remotable_results.each do |result| %>
   <div class="row-fluid">
       <div class="results-img span2">
         <%= link_to image_tag(gravatar(result, 100)), user_path(result.login) %>
@@ -14,10 +13,8 @@ nerd(s) that you can pair with remotely:
 
       </div>
       <div class="results-contact span10">
-          <%= link_to result.name, user_path(result.login) %> is a great match for you! You can contact this rockstar hacker at: 
-          <a href="mailto:<%= result.email %>"><%= result.email %></a>
-      </div>      
+        <%= link_to result.name, user_path(result.login) %> is a great match for you! You can contact this rockstar hacker at: 
+        <a href="mailto:<%= result.email %>"><%= result.email %></a>
+      </div>
   </div>
-  <div class="row-fluid"><hr></div>
 <% end %>
-<span class = "pagination"><%= will_paginate @remotable_results %></span>

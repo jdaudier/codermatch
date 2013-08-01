@@ -17,7 +17,11 @@
 
           <!-- The instance where current user is remotable. Renders remotable results. -->
         <% else %>
-          <%= render partial: "remotable_results" %>
+          <% if @remotable_results.count == 1 %>
+            <%= render partial: "one_remotable_result" %>          
+          <% else %>         
+            <%= render partial: "remotable_results" %>
+          <% end %>
         <% end %>
       </h3>
   </div>
