@@ -1,6 +1,6 @@
 var destroyUser = function(userId){
 
-  if (confirm('Are you sure?')) { 
+  if (confirm('Are you sure?')) {
 
     $.ajax({
       type: "POST",
@@ -11,11 +11,11 @@ var destroyUser = function(userId){
 
     alert("Your account was successfully deleted. Please come back again when you feel like pair programming :)")
 
-  }  
+  }
 
   else {
 
-    alert("Yay!! You're still with us. We are logging you out, so you can take a break :)")
+    alert("Yay! You're still with us. We're logging you out, so you can take a break :)")
 
   };
 };
