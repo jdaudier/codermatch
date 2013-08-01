@@ -24,9 +24,8 @@ class CoderSearchesController < ApplicationController
   def make_remotable
     @current_user.remotable = true
     @current_user.save
-
-    
-
+    #redirects using the pair language and pair level parameters passed
+    #through the hidden fields
     redirect_to "/coder_search?language=#{params[:language]}&level=#{params[:level]}&remotable=true"
   end
 end
