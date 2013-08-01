@@ -5,10 +5,10 @@ It's time to move, buddy!</p>
 
 
 <!-- The level and language are passed through the search url. -->
-<%= form_tag '/remotable', method: 'POST' do %>
+<%= form_tag '/remotable', method: 'POST', class: 'remotable' do %>
   <%= hidden_field_tag :level, "#{params[:level]}" %>
   <%= hidden_field_tag :language, "#{params[:language]}" %>
-  <%= submit_tag "I'm interested in remote pairing" %>
+  <%= submit_tag "I'm interested in remote pairing", class: 'btn btn-primary' %>
   <% end %>
 
 
