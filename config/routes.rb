@@ -6,6 +6,7 @@ Codermatch::Application.routes.draw do
   post '/signup' => 'pages#signup'
   post 'users/notify' => 'users#notify'
 
+  post '/remotable' => 'coder_searches#make_remotable'
   resource :coder_search
   resources :languages
   resources :levels

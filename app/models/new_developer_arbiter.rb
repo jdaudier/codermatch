@@ -1,7 +1,7 @@
 # This for use with our form
 
 class NewDeveloperArbiter #< Valuable
-  attr_accessor :firstname, :my_language, :my_level, :pair_language, :pair_level, :zipcode, :lastname
+  attr_accessor :firstname, :my_language, :my_level, :pair_language, :pair_level, :zipcode, :lastname, :remotable
 
   def initialize(atts = {}, current_user)
     # Current user is passed in here from the pages controller and we set it as a @current_user instance variable to use in the views
@@ -29,7 +29,8 @@ class NewDeveloperArbiter #< Valuable
     @current_user.update_attributes({
       :zipcode => self.zipcode, 
       :language => self.language, #This is plugged into the language method above
-      :level => self.my_level
+      :level => self.my_level,
+      :remotable => false #This sets current_user's remotable to false when they click 'match me'. If they find nobody, they can come back and do zip code search.
     })
 
   end

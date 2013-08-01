@@ -15,9 +15,19 @@ class CoderSearchesController < ApplicationController
 
         # The .page(params[:page].to_i).per_page(params[:per_page].to_i) paginates the @results search query 
         @results = @current_user.nearbys(30).where('languages.language' => params[:language], :level => params[:level]).joins(:language).where('users.id != ?', @current_user.id).page(params[:page].to_i).per_page(params[:per_page].to_i)
+
+        @remotable_results = User.where('languages.language' => params[:language], :level => params[:level], :remotable => true).joins(:language).where('users.id != ?', @current_user.id).page(params[:page].to_i).per_page(params[:per_page].to_i)
       end
     end
   end
 
+  def make_remotable
+    @current_user.remotable = true
+    @current_user.save
+
+    
+
+    redirect_to "/coder_search?language=#{params[:language]}&level=#{params[:level]}&remotable=true"
+  end
 end
 

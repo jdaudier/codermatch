@@ -249,6 +249,9 @@ sup {
   margin-bottom: 0px;
 }
 
+
+/*----- button styles --------- */
+
 .btn-primary {
 	background: #65a9d7;
 	background: -webkit-gradient(linear, left top, left bottom, from(#1399cd), to(#65a9d7));
@@ -267,7 +270,15 @@ sup {
 	background: #0E6F95;
 }
 
-.rw-words{
+.remotable {
+  text-align: center;
+}
+
+.remotable .btn {
+  padding: 1% 2%;
+}
+
+.rw-words {
 	display: inline;
 	text-indent: 20px;
 }

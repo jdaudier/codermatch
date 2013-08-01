@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130727011046) do
+ActiveRecord::Schema.define(:version => 20130801195218) do
+
+  create_table "hooks_tests", :force => true do |t|
+    t.string   "event"
+    t.string   "request"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "languages", :force => true do |t|
     t.string   "language"
@@ -30,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20130727011046) do
     t.string   "name"
     t.float    "latitude"
     t.float    "longitude"
+    t.boolean  "remotable"
   end
 
 end

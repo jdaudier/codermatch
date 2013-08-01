@@ -5,20 +5,21 @@
     <h1 id='form-header'>Matches</h1>
     <hr>
       <h3>
-        <% if @results.count == 1 %>
-          <%= render partial: "oneresult" %>
 
-        <% elsif @results.count == 0 %>  
+        <% if @current_user.remotable == false %>
+          <% if @results.count == 1 %>
+            <%= render partial: "oneresult" %>
+          <% elsif @results.count == 0 %>  
+            <%= render partial: "noresults" %>          
+          <% else %>         
+            <%= render partial: "manyresults" %>
+          <% end %>
 
-          <%= render partial: "noresults" %>
-        
+          <!-- The instance where current user is remotable. Renders remotable results. -->
         <% else %>
-       
-          <%= render partial: "manyresults" %>
-
+          <%= render partial: "remotable_results" %>
         <% end %>
       </h3>
-
   </div>
   <div class="span2"></div>
 </div>
