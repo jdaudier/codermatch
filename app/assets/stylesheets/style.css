@@ -171,6 +171,20 @@ sup {
 	font-weight: lighter;
 }
 
+.icon-question-sign {
+  color: #1399cd;
+  font-size: .8em;
+}
+
+.icon-question-sign:hover {
+  color: #1182ab;
+}
+
+/*This is to remove the underline for the question mark*/
+.form-inline a:hover {
+  text-decoration: none;
+}
+
 .media-heading {
 	color: #535353;
 }
