@@ -34,4 +34,11 @@ Codermatch::Application.configure do
 
   # WORKAROUND: Change to true to enable debugging javascript as separate files.
   config.assets.debug = false
+
+  config.action_mailer.smtp_settings = {
+  :address   => "smtp.mandrillapp.com",
+  :port      => 587,
+  :user_name => ENV["MANDRILL_USERNAME"],
+  :password  => ENV["MANDRILL_API_KEY"]
+}
 end
