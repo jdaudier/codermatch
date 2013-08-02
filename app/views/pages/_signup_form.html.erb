@@ -3,7 +3,12 @@
 <div class="span8 right-column">
   <h1 id='form-header'>Who are you?</h1>
   <hr>
+
+  <!-- Form action /signup gets routed this way: post '/signup' => 'pages#signup' -->
   <form action="/signup" method="post" class="form-inline largeinput">
+
+    <!-- Added this line to add authenticity token and remove the CSRF warning (WARNING: Can't verify CSRF token authenticity) so form is safe from forgery -->
+    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
     <h2>
       <!-- I am <pre><%= @current_user.name %></pre>
 
