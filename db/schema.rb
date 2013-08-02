@@ -13,13 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20130801195218) do
 
-  create_table "hooks_tests", :force => true do |t|
-    t.string   "event"
-    t.string   "request"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "languages", :force => true do |t|
     t.string   "language"
     t.datetime "created_at", :null => false
