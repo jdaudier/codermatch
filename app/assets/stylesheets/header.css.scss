@@ -1,0 +1,45 @@
+@import "variables";
+
+.navbar-inverse {
+  background-image: url(/assets/bg_header.png);
+  background-color: transparent;
+  background-repeat: repeat-x;
+  height: 84px;
+  margin-bottom: 50px;
+  border-color: transparent;
+}
+
+.sign-out {
+  color: white;
+}
+
+.profile-link {
+  color: $secondarycolor;
+}
+
+.github-button {
+  position: absolute;
+  z-index: 999;
+  left:66%;
+  top: 16px;
+}
+
+.header {
+  height: 80px;
+}
+
+.name h1 {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.brand {
+  position: relative;
+  top: -60px;
+  left: -30px;
+}
+
+.container li {
+  list-style: none;
+}

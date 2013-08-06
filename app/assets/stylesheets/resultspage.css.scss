@@ -1,0 +1,54 @@
+@import "variables";
+
+.no-results-photo {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.no-results-photo img {
+  border-radius: 4px;
+}
+
+#no-results-header {
+  text-align: center;
+}
+
+.results-count {
+  color: $primarycolor;
+}
+
+.results-img {
+  padding: 20px 10px 10px 0;
+  float: left;
+}
+
+.results-img img {
+  border-radius: 4px;
+}
+
+.results-contact {
+  padding-top: 15px;
+  display: inline-block;
+}
+
+.results-img h6 {
+  text-align: center;
+}
+
+/* REMOTABLE VIEWS */
+
+.remotable {
+  text-align: center;
+  margin-top: 2.5%;
+}
+
+.remotable input[type=submit]{
+  letter-spacing: 0.09em;
+  padding: 1.5% 3%;
+  font-size: .7em;
+  font-weight: 200;
+}
+
+.pagination {
+  text-align: center;
+}

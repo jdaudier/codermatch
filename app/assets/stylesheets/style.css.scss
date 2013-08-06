@@ -1,0 +1,56 @@
+@import "variables";
+
+/* ---- GENERAL LAYOUT --- */
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+	background-image: url(/assets/project_paper.png);
+}
+
+.signup-form, .matches, .profile-container {
+	margin-top: 160px; /*This moves content below header image so it shows up*/
+} 
+
+.span8 {
+  margin-left: 0;
+}
+
+.span2 {
+	margin-left: 0;
+}
+
+.right-column {
+	background: rgba(255, 255, 255, 0.4);
+  padding: 30px;
+	box-shadow: 0 0 2px #a9a9a9;
+	min-height: 460px;
+}
+
+.span8 hr, .span11 hr {
+	border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #dad9d9;
+}
+
+/*----- BUTTONS --------- */
+
+.btn-primary {
+	background: #65a9d7;
+	background: -webkit-gradient(linear, left top, left bottom, from($primarycolor), to(#65a9d7));
+	background: -webkit-linear-gradient(top, $primarycolor, #65a9d7);
+	background: -moz-linear-gradient(top, $primarycolor, #65a9d7);
+	background: -ms-linear-gradient(top, $primarycolor, #65a9d7);
+	background: -o-linear-gradient(top, $primarycolor, #65a9d7);
+}
+
+.btn-primary:hover {
+	background: #1182ab;
+}
+
+.btn-primary:active {
+	border-top-color: #107DA8;
+	background: #0E6F95;
+}

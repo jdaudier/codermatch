@@ -1,0 +1,88 @@
+@import "variables";
+
+footer {
+  background-image: url(/assets/footer.png);
+  margin-top: 35px;
+  background-repeat: repeat-x;
+}
+
+footer * {
+  margin: 0;
+}
+
+.social-icons {
+  padding-left: 5%;
+}
+
+#socialmedia {
+  list-style-type: none;
+  margin-left: 0px;
+}
+
+#socialmedia li {
+  float: left;
+  margin: 46px 15px 46px 0px;
+}
+
+#socialmedia li a {
+  background-color: transparent;
+  background-image: url(/assets/sprites.png);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 60px;
+  display: block;
+}
+
+#socialmedia .Twitter a {
+  background-position: 0px 0px;
+}
+
+#socialmedia .Twitter a:hover {
+  background-position: -0px -77px;
+}
+
+#socialmedia .FB a {
+  background-position: -88px -0px;
+}
+
+#socialmedia .FB a:hover {
+  background-position: -89px -76px;
+}
+
+footer p span {
+  color: #ff3578;
+  font-size: 1.4em;
+}
+
+footer:after {
+  content: "";
+  display: block;
+  visibility: hidden;
+  height: 0;
+  clear: both;
+}
+
+.contact p {
+  padding-top: 90px;
+  padding-right: 5%;
+  letter-spacing: 0.09em;
+  text-align: right;
+}
+
+.contact a {
+  color: #333435;
+}
+
+/* STICKY FOOTER */
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -10.625em;
+}
+
+footer, .push {
+  height: 10.625em;
+}

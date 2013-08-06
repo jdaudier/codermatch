@@ -1,0 +1,80 @@
+@import "variables";
+
+#form-header {
+  text-align: center;
+  color: $secondarycolor;
+  font-size: 3.2em;
+}
+
+.span8 h2 {
+  color: $secondarycolor;
+  text-align: center;
+}
+
+.largeinput input, .largeinput select {
+  height: 36px;
+  font-size: 20px;
+}
+
+.form-inline h2 {
+  text-align: left;
+  line-height: 2;
+  padding: 0 30px;
+}
+
+/* ---- Makes placeholder error message RED --- */
+
+#inputError::-webkit-input-placeholder {
+  color: #b94a48;
+}
+
+#inputError::-moz-placeholder {
+  color: #b94a48;
+}
+
+#inputError:-moz-placeholder {
+  color: #b94a48;
+}
+
+#inputError:-ms-input-placeholder {
+  color: #b94a48;
+}
+
+/* ------ LEVEL QUESTION MARK ICON ---- */
+
+sup {
+  font-weight: lighter;
+}
+
+.icon-question-sign {
+  color: $primarycolor;
+  font-size: .8em;
+}
+
+.icon-question-sign:hover {
+  color: #1182ab;
+}
+
+.form-inline a:hover {
+  text-decoration: none; /*This is to remove the underline for the question mark*/
+}
+
+.btn h2 {
+  color: white;
+}
+
+.match-me-btn {
+  padding: 12px;
+  margin-bottom: 12px;
+  margin-left: 15px;
+}
+
+#match-text {
+  text-align: center;
+}
+
+.disclaimer {
+  clear: left;
+  margin-left: 27px;
+  color: #7e7e7e;
+}
