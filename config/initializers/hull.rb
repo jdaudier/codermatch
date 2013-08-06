@@ -24,5 +24,9 @@ end
 require 'hull/middlewares/hook'
 
 Rails.application.config.middleware.use Hull::Middlewares::Hook, secret: Hull.app_secret do |event, request|
-  HullEventHandler.handle(event, request)
+  begin
+    HullEventHandler.handle(event, request)
+  rescue => err
+    Rails.logger.info "Error Handling Hull event: #{err.message}"
+  end
 end
