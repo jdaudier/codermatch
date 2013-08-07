@@ -10,7 +10,7 @@ module HullEventHandler
         if user_login
           commenter   = event['data']['actor']['name'] rescue nil
           content     = event['data']['object']['description'] rescue nil
-          Notifications.new_comment(recipient, commenter, content).deliver
+          Notifications.delay.new_comment(recipient, commenter, content)
         end
       end
     end

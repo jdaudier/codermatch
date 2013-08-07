@@ -38,6 +38,8 @@ gem 'handlebars_assets', '~> 0.14.1'
 
 gem 'jquery-rails'
 
+gem 'delayed_job_active_record'
+
 gem 'figaro'
 
 gem 'devise'
