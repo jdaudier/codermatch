@@ -13,7 +13,7 @@ Language.create(:language => 'HTML/CSS')
 Language.create(:language => 'PHP')
 
 
-1000.times do
-	zipcode = rand(10000..99999).to_s
-	User.create(:zipcode => zipcode)
-end
+# 30.times do
+# 	zipcode = rand(10000..99999).to_s
+# 	User.create(:zipcode => zipcode)
+# end
