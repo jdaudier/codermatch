@@ -1,0 +1,17 @@
+<p class="no-results-header">
+	Looks like no one is ready to remote pair yet. No worries, it's only a matter of time before they discover this wonderful tool!
+</p>
+
+<div class="no-results-photo">
+  <%= image_tag("sad.gif") %>
+</div>
+
+<%= form_tag '/remotable_notification', method: 'POST', class: 'remotable' do %>
+  <%= hidden_field_tag :level, "#{params[:level]}" %>
+  <%= hidden_field_tag :language, "#{params[:language]}" %>
+  <%= submit_tag "Notify Me", class: 'btn btn-primary', 'data-disable-with' => "Sure thing!" %>
+<% end %>
+
+<h5 class="notify-text">Get notified when someone is available<br />to pair with you remotely.</h5>
+
+
