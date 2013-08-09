@@ -11,7 +11,7 @@ class Notifications < ActionMailer::Base
     @commenter = commenter
     @body = comment_body
     @recipient = recipient
-    subject = "You have a new comment from #{@commenter}"
+    subject = "You have a new comment from #{@commenter.name}"
     mail to: recipient.email, :subject => subject
   end
 end
