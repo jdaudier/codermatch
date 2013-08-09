@@ -29,7 +29,11 @@ class CoderSearchesController < ApplicationController
       end
     end
 
-    @json = @results.to_gmaps4rails
+    # if @results
+      @json = @results.to_gmaps4rails
+    # elsif @remotable_results
+      @json2 = @remotable_results.to_gmaps4rails
+    # end
   end
 
   def make_remotable
