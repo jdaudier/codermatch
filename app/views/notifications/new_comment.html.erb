@@ -33,7 +33,10 @@
 	/* -------------------------------------
 			ELEMENTS
 	------------------------------------- */
-	a { color: #2BA6CB;}
+	a {
+		color: #2BA6CB;
+		text-decoration: none;
+	}
 
 	.btn {
 		text-decoration:none;
@@ -47,16 +50,9 @@
 		display: inline-block;
 	}
 
-	p.callout {
-		padding:15px;
-		background-color:#ebebeb;
-		margin-bottom: 15px;
-		font-size:17px;
-	}
-
 	table.social {
 	/* 	padding:15px; */
-		background-color: #737373;
+		background-color: #ebebeb;
 
 	}
 	.social .soc-btn {
@@ -98,14 +94,6 @@
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; line-height: 1.1; margin-bottom:15px; color:#000;
 	}
 
-	h5 {
-		color: white;
-	}
-
-	.email {
-		color: white;
-	}
-
 	h1 small, h2 small, h3 small, h4 small, h5 small, h6 small { font-size: 60%; color: #6f6f6f; line-height: 0; text-transform: none; }
 
 	h1 { font-weight:200; font-size: 44px;}
@@ -123,7 +111,7 @@
 		font-size:14px;
 		line-height:1.6;
 	}
-	p.lead { font-size:17px; }
+	p.lead { font-size:19px; }
 	p.last { margin-bottom:0px;}
 
 	ul li {
@@ -234,10 +222,9 @@
 						<br/>
 						<p class="lead"><%= @commenter %> just wrote the following comment on your CoderMatch profile:</p>
 
-						<!-- Callout Panel -->
-						<p class="callout">
+						<p class="lead">
 							<%= @body %>
-						</p><!-- /Callout Panel -->
+						</p>
 
 						<a class="btn" href="http://codermatch.me/users/<%= @recipient.login %>">Read it online</a>
 
