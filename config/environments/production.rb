@@ -72,5 +72,6 @@ Codermatch::Application.configure do
   :password  => ENV["MANDRILL_API_KEY"]
 }
 
+  # This makes the image tag work for emails
   config.action_mailer.asset_host = 'http://www.codermatch.me'
 end
