@@ -9,6 +9,7 @@ module HullEventHandler
         recipient = User.where(login: user_login).first
         if user_login
           # OLD: event['data']['actor']['login'] didn't work - check with Stephane to make sure 'name' will always be login: value
+          # Changed login: to name: and it works
           commenter   = User.where(name: event['data']['actor']['name']).first rescue nil
           content     = event['data']['object']['description'] rescue nil
           Notifications.delay.new_comment(recipient, commenter, content)
