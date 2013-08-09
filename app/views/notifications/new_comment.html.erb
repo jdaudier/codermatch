@@ -208,7 +208,7 @@
 				<div class="content">
 					<table>
 					<tr>
-						<td><%= image_tag("codermatch-logo.png") %></td>
+						<td><%= image_tag attachments['codermatch-logo.png'].url -%></td>
 					</tr>
 				</table>
 				</div>
@@ -230,7 +230,7 @@
 				<tr>
 					<td>
 
-						<h3>You've got mail, <%= @recipient %>!</h3>
+						<h3>You've got mail, <%= @recipient.name %>!</h3>
 						<br/>
 						<p class="lead"><%= @commenter %> just wrote the following comment on your CoderMatch profile:</p>
 
