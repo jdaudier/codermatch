@@ -20,5 +20,10 @@ class PagesController < ApplicationController
     end
   end
 
+  # alt is our root
+  def alt
+    @json = User.all.to_gmaps4rails
+  end
+
 end
 

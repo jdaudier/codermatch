@@ -11,3 +11,11 @@ Language.create(:language => 'Python')
 Language.create(:language => 'JavaScript')
 Language.create(:language => 'HTML/CSS')
 Language.create(:language => 'PHP')
+
+
+# 5.times do
+# 	zipcode = rand(78700..78799).to_s
+# 	name = rand(1..5).to_s
+# 	login = rand(1..5).to_s
+# 	User.create(:zipcode => zipcode, :name => name, :login => login, :level => 'Beginner', :language_id => 1)
+# end

@@ -7,6 +7,7 @@ Codermatch::Application.routes.draw do
   post 'users/notify' => 'users#notify'
 
   post '/remotable' => 'coder_searches#make_remotable'
+  post '/remotable_notification' => 'coder_searches#remote_pair_notification'
   resource :coder_search
   resources :languages
   resources :levels

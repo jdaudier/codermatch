@@ -19,14 +19,25 @@ class User < ActiveRecord::Base
   geocoded_by :zipcode
   after_validation :geocode
 
-  # def nearby
-  #   if user.geocoded?
-  #     user.nearbys(20)
-  #   end
-  # end
+  acts_as_gmappable
 
-  # def picture(size=100, default='blank')
-  #   gravatar_id = Digest::MD5.hexdigest(self.email)
-  #   "//gravatar.com/avatar/#{gravatar_id}.png?s=#{size}&d=#{default}"
-  # end
+  def gmaps4rails_address
+   #describe how to retrieve the address from your model, if you use directly a db column, you can dry your code, see wiki
+    "#{self.zipcode}"
+  end
+
+  def gmaps4rails_infowindow
+    # if @current_user
+      # "#{self.login}"
+
+    # end
+      html = ""
+      user_zipcode = User.where(login: self.login).first.zipcode
+      # if @current_user.present?
+        User.where(zipcode: user_zipcode).each do |u|
+          html << "<h5>#{u.login}</h5>"
+        end
+        html
+      # end
+  end
 end

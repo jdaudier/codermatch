@@ -33,6 +33,10 @@
   <div class="subheading">
     <h3>Enter your zip code to find local coders to pair program with</h3>
   </div>
+  <div class="gmaps">
+    <%= gmaps4rails(@json) %>
+  </div>
+
 </div>
 
 <script>
@@ -42,6 +46,5 @@
     });
   });
 </script>
-
 
 <% end %>

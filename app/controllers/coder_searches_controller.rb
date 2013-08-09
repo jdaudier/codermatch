@@ -28,14 +28,29 @@ class CoderSearchesController < ApplicationController
           where(:remotable => true).joins(:language).where('users.id != ?', @current_user.id).page(params[:page].to_i).per_page(params[:per_page].to_i)
       end
     end
+
+    # if @results
+      @json = @results.to_gmaps4rails
+    # elsif @remotable_results
+      @json2 = @remotable_results.to_gmaps4rails
+    # end
   end
 
   def make_remotable
     @current_user.remotable = true
     @current_user.save
+
+    # if User.where(:notify => true).languange == @current_user.language &&  User.where(:notify).level == @current_user.level
+    #   send email to User.where(:notify => true)
+    # end
     #redirects using the pair language and pair level parameters passed
     #through the hidden fields
     redirect_to "/coder_search?language=#{params[:language]}&level=#{params[:level]}&remotable=true"
+  end
+
+  def remote_pair_notification
+    @current_user.notify = true
+    @current_user.save
   end
 end
 
