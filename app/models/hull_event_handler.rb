@@ -8,7 +8,7 @@ module HullEventHandler
         user_login = target['uid'].split("/")[1]
         recipient = User.where(login: user_login).first
         if user_login
-          commenter   = event['data']['actor']['name'] rescue nil
+          commenter   = User.where(login: event['data']['actor']['name']).first rescue nil
           content     = event['data']['object']['description'] rescue nil
           Notifications.delay.new_comment(recipient, commenter, content)
         end
