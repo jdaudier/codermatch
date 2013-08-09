@@ -71,4 +71,6 @@ Codermatch::Application.configure do
   :user_name => ENV["MANDRILL_USERNAME"],
   :password  => ENV["MANDRILL_API_KEY"]
 }
+
+  config.action_mailer.asset_host = 'http://www.codermatch.me'
 end
