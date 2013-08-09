@@ -11,10 +11,10 @@ class Notifications < ActionMailer::Base
     @body = comment_body
     @recipient = recipient
     subject = "You have a new comment from #{@commenter}"
-    attachments.inline['codermatch-logo.png'] = {
-      :data => File.read("#{Rails.root.to_s + '/app/assets/images/codermatch-logo.png'}"),
-      :mime_type => "image/png"
-      }
+    # attachments.inline['codermatch-logo.png'] = {
+    #   :data => File.read("#{Rails.root.to_s + '/app/assets/images/codermatch-logo.png'}"),
+    #   :mime_type => "image/png"
+    #   }
     mail to: recipient.email, :subject => subject
   end
 end
