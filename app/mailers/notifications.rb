@@ -1,5 +1,5 @@
 class Notifications < ActionMailer::Base
-  include ApplicationHelper
+  helper :application
   default from: "hi@codermatch.me"
 
   # Subject can be set in your I18n file at config/locales/en.yml
