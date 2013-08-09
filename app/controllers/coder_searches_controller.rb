@@ -28,6 +28,8 @@ class CoderSearchesController < ApplicationController
           where(:remotable => true).joins(:language).where('users.id != ?', @current_user.id).page(params[:page].to_i).per_page(params[:per_page].to_i)
       end
     end
+
+    @json = @results.to_gmaps4rails
   end
 
   def make_remotable
