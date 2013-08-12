@@ -20,20 +20,7 @@
 
   {{#if comments}}
     <ul class="media-list hull-comments__list">
-      {{#comments}}
-        <li class="media" data-hull-comment-id="{{id}}">
-          <div class="pull-left">
-            <a href = "{{#user.identities}} {{login}} {{/user.identities}}">
-              <img class="media-object img-rounded" src="{{user.picture}}" alt="{{user.name}}">
-            </a>
-          </div>
-
-          <div class="media-body">
-            <div class="pull-right">
-              <small class="muted">{{fromNow updated_at}}</small>
-            </div>
-
-            {{! Use this to debug: {{json user.identities\}\}
+      {{! Use this to debug: {{json user.identities\}\}
             Comments are in an array. User is a hash inside that array with an identities array. Login is a hash inside that.
             Comments = [{
               id: ...
@@ -52,6 +39,18 @@
                 ]
               }
             }] }}
+      {{#comments}}
+        <li class="media" data-hull-comment-id="{{id}}">
+          <div class="pull-left">
+            <a href = "{{#user.identities}} {{login}} {{/user.identities}}">
+              <img class="media-object img-rounded" src="{{user.picture}}" alt="{{user.name}}">
+            </a>
+          </div>
+
+          <div class="media-body">
+            <div class="pull-right">
+              <small class="muted">{{fromNow updated_at}}</small>
+            </div>
             <a href = "{{#user.identities}} {{login}} {{/user.identities}}">
               <h4 class="media-heading">{{user.name}}</h4>
             </a>
