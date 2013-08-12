@@ -1,2 +1,13 @@
 $primarycolor: #1399cd;
 $secondarycolor: #535353;
+$button_dark: #65a9d7;
+$button_light: $primarycolor;
+
+@mixin vertical_gradient($top, $bottom) {
+	background: $bottom;
+	background: -webkit-gradient(linear, left top, left bottom, from($top), to($bottom));
+	background: -webkit-linear-gradient(top, $top, $bottom);
+	background: -moz-linear-gradient(top, $top, $bottom);
+	background: -ms-linear-gradient(top, $top, $bottom);
+	background: -o-linear-gradient(top, $top, $bottom);
+}

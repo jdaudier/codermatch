@@ -146,7 +146,7 @@ GEM
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
-    sass (3.2.9)
+    sass (3.2.10)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -192,6 +192,7 @@ DEPENDENCIES
   quiet_assets
   rails (= 3.2.13)
   rspec-rails (~> 2.0)
+  sass (= 3.2.10)
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)
