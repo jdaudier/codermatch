@@ -39,7 +39,6 @@ GEM
       i18n (= 0.6.1)
       multi_json (~> 1.0)
     arel (3.0.2)
-    bcrypt-ruby (3.1.0)
     better_errors (0.9.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -67,11 +66,6 @@ GEM
     delayed_job_active_record (4.0.0)
       activerecord (>= 3.0, < 4.1)
       delayed_job (>= 3.0, < 4.1)
-    devise (2.2.4)
-      bcrypt-ruby (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (~> 3.1)
-      warden (~> 1.2.1)
     diff-lcs (1.2.4)
     erubis (2.7.0)
     execjs (1.4.0)
@@ -105,7 +99,6 @@ GEM
     mime-types (1.23)
     multi_json (1.7.7)
     multipart-post (1.2.0)
-    orm_adapter (0.4.0)
     pg (0.15.1)
     polyglot (0.3.3)
     quiet_assets (1.0.2)
@@ -166,8 +159,6 @@ GEM
     uglifier (2.1.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
-    warden (1.2.1)
-      rack (>= 1.0)
     will_paginate (3.0.4)
 
 PLATFORMS
@@ -179,7 +170,6 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   debugger
   delayed_job_active_record
-  devise
   figaro
   geocoder
   gmaps4rails
