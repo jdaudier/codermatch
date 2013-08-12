@@ -30,7 +30,7 @@ Lets you find local coders to pair program with.
 * Adding a hidden field to our sign-up form in order to protect from forgery since we're not using Rails form helpers
 
 ### Special thanks to:
-[Stephane Bellity](https://github.com/sbellity) - for the best tech support
-[Keith Gaddis](https://github.com/karmajunkie) - for being an awesome backend mentor
-[Johnathon E. Wright](https://github.com/mustmodify) from [Rails Hotline](http://rails.pockethotline.com) - for getting us through the initial hump
-[Elyse Holladay](http://www.elyseholladay.com) - for being our "sassy" frontend mentor
+* [Stephane Bellity](https://github.com/sbellity) - for the best tech support
+* [Keith Gaddis](https://github.com/karmajunkie) - for being an awesome backend mentor
+* [Johnathon E. Wright](https://github.com/mustmodify) from [Rails Hotline](http://rails.pockethotline.com) - for getting us through the initial hump
+* [Elyse Holladay](http://www.elyseholladay.com) - for being our "sassy" frontend mentor
