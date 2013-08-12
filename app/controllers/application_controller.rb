@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-
   before_filter :current_user_id, :authenticate_user
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   def authenticate_user
     return session.delete(:current_user) unless current_user_id
@@ -16,4 +16,9 @@ class ApplicationController < ActionController::Base
     @current_user_id ||= Hull.authenticate_user(request.env)
   end
 
+  private
+
+  def record_not_found
+    render "public/404.html.erb", status: 404
+  end
 end
