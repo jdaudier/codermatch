@@ -42,8 +42,6 @@ gem 'delayed_job_active_record'
 
 gem 'figaro'
 
-gem 'devise'
-
 gem 'hirb'
 
 gem 'haml'

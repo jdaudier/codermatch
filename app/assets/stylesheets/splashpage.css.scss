@@ -1,5 +1,3 @@
-@import "variables";
-
 .hero-unit h1 {
   color: $primarycolor;
   font-size: 60px;
@@ -84,8 +82,20 @@
 .map_container {
   margin: 0 auto;
   width: 100%;
+  margin-bottom: 2%;
 }
 
 .gmaps4rails_map {
   width: 100%;
+}
+
+// This prevents Bootstrap from distorting Google Maps Controls and Overlays
+
+#map label {
+  width: auto;
+  display:inline;
+}
+
+#map img {
+  max-width: none;
 }

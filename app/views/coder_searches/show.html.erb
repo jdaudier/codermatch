@@ -9,18 +9,20 @@
         <% if @current_user.remotable == false %>
           <% if @results.count == 1 %>
             <%= render partial: "oneresult" %>
-          <% elsif @results.count == 0 %>  
-            <%= render partial: "noresults" %>          
-          <% else %>         
+          <% elsif @results.count == 0 %>
+            <%= render partial: "noresults" %>
+          <% else %>
             <%= render partial: "manyresults" %>
           <% end %>
 
           <!-- If there are remotable users, renders remotable results. -->
         <% else %>
           <% if @remotable_results.count == 1 %>
-            <%= render partial: "one_remotable_result" %>          
-          <% elsif @remotable_results.count > 1 %>         
+            <%= render partial: "one_remotable_result" %>
+          <% elsif @remotable_results.count > 1 %>
             <%= render partial: "remotable_results" %>
+          <% elsif @remotable_results.count == 0 %>
+            <%= render partial: "no_remotable_results" %>
           <% end %>
         <% end %>
       </h3>

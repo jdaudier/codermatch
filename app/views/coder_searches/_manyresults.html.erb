@@ -4,7 +4,7 @@ nerds in your area:
 
 <!-- @results is an array of the people that match your search and we're iterating through them -->
 <!-- user_path(result.login) links to the user profile view -->
-
+<%= gmaps4rails(@json) %>
 <% @results.each do |result| %>
   <div class="row-fluid">
       <div class="results-img span2">
@@ -16,10 +16,10 @@ nerds in your area:
 
       </div>
       <div class="results-contact span10">
-          <%= link_to result.name, user_path(result.login) %> is a great match for you! You can contact this rockstar hacker at: 
+          <%= link_to result.name, user_path(result.login) %> is a great match for you! You can contact this rockstar hacker at:
           <a href="mailto:<%= result.email %>"><%= result.email %></a>
-        
-      </div>      
+
+      </div>
   </div>
   <div class="row-fluid"><hr></div>
 <% end %>

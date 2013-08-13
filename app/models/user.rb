@@ -26,4 +26,18 @@ class User < ActiveRecord::Base
     "#{self.zipcode}"
   end
 
+  def gmaps4rails_infowindow
+    # if @current_user
+      # "#{self.login}"
+
+    # end
+      html = ""
+      user_zipcode = User.where(login: self.login).first.zipcode
+      # if @current_user.present?
+        User.where(zipcode: user_zipcode).each do |u|
+          html << "<h5>#{u.login}</h5>"
+        end
+        html
+      # end
+  end
 end

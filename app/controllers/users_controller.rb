@@ -2,7 +2,10 @@ class UsersController < ApplicationController
 
   def show
     @id = params[:id] #@id is not a number but the GitHub login name
-    @user = User.find_by_name(params[:id])
+    @user = User.find_by_login(params[:id])
+    if @user.nil?
+      record_not_found
+    end
   end
 
   def notify

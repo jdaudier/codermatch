@@ -1,7 +1,7 @@
 I found
 <span class="results-count"><%= @remotable_results.count %></span>
 nerd that you can pair with remotely:
-
+<%= gmaps4rails(@json2) %>
 <%- @remotable_results.each do |result| %>
   <div class="row-fluid">
       <div class="results-img span2">
@@ -13,7 +13,7 @@ nerd that you can pair with remotely:
 
       </div>
       <div class="results-contact span10">
-        <%= link_to result.name, user_path(result.login) %> is a great match for you! You can contact this rockstar hacker at: 
+        <%= link_to result.name, user_path(result.login) %> is a great match for you! You can contact this rockstar hacker at:
         <a href="mailto:<%= result.email %>"><%= result.email %></a>
       </div>
   </div>
