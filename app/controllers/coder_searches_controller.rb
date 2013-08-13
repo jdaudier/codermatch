@@ -40,9 +40,19 @@ class CoderSearchesController < ApplicationController
     @current_user.remotable = true
     @current_user.save
 
-    # if User.where(:notify => true).languange == @current_user.language &&  User.where(:notify).level == @current_user.level
-    #   send email to User.where(:notify => true)
-    # end
+    # If there is another coder with same language and level as me, send my info to them
+
+    User.joins(:language).where(:notify => true).each do |user|
+      # if user in database (Matt) with notable => true has same language/level as @current_user, Matt will be notified of @current_user
+      if user.language_id == @current_user.language_id && user.level == @current_user.level
+        @recipient = user
+        @new_buddy = @current_user
+        @new_buddy_language = @current_user.language.language
+        Notifications.delay.remotable_notify(@recipient, @new_buddy, @new_buddy_language)
+      end
+    end
+
+
     #redirects using the pair language and pair level parameters passed
     #through the hidden fields
     redirect_to "/coder_search?language=#{params[:language]}&level=#{params[:level]}&remotable=true"

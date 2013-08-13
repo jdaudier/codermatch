@@ -14,4 +14,12 @@ class Notifications < ActionMailer::Base
     subject = "You have a new comment from #{@commenter.name}"
     mail to: recipient.email, :subject => subject
   end
+
+  def remotable_notify(recipient, new_buddy, new_buddy_language)
+    @recipient = recipient
+    @new_buddy = new_buddy
+    @new_buddy_language = new_buddy_language
+    subject = "There is a new coder who you might be able to pair with"
+    mail to: recipient.email, :subject => subject
+  end
 end
