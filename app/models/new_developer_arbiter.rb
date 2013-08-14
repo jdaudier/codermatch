@@ -16,6 +16,13 @@ class NewDeveloperArbiter #< Valuable
     self.pair_language = atts[:pair_language]
     self.pair_level = atts[:pair_level]
     self.zipcode = atts[:zipcode]
+
+    if atts[:remote] == 'can'
+      self.remotable = true
+    else
+      self.remotable = false
+    end
+
   end
 
   def language
@@ -27,10 +34,10 @@ class NewDeveloperArbiter #< Valuable
 
     #With validation, this method returns true if current_user is successfully updated(zipcode is proper and has 5 digits). Otherwise it returns false.
     @current_user.update_attributes({
-      :zipcode => self.zipcode, 
+      :zipcode => self.zipcode,
       :language => self.language, #This is plugged into the language method above
       :level => self.my_level,
-      :remotable => false #This sets current_user's remotable to false when they click 'match me'. If they find nobody, they can come back and do zip code search.
+      :remotable => self.remotable #This sets current_user's remotable to false when they click 'match me'. If they find nobody, they can come back and do zip code search.
     })
 
   end

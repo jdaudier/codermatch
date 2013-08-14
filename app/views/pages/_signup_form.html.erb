@@ -17,8 +17,8 @@
         <select name="signup[my_level]">
           <% User::LEVELS.each do |level| %>
             <option><%= level %></option>
-          <% end %> 
-        </select> 
+          <% end %>
+        </select>
         <a href="#myModal" data-toggle="modal">
           <sup><i class="icon-question-sign"></i></sup>
         </a>
@@ -49,7 +49,13 @@ coder to pair program with around
     </span>
   </span>
 <% else %>
-  <input type="text" pattern="[0-9]*" name="signup[zipcode]" placeholder="5-digit zip code"> .
+  <input type="text" pattern="[0-9]*" name="signup[zipcode]" placeholder="5-digit zip code"> , and
+  I
+    <select name="signup[remote]">
+      <option>can</option>
+      <option>cannot</option>
+    </select>
+  pair remotely .
 <% end %>
 
     </h2>
