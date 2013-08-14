@@ -59,6 +59,11 @@
               {{description}}
             </div>
             <div class="hull-comments__actions">
+                  {{! Need to ask Stephane how to hide 'reply' on your own posts. }}
+                  <small>
+                    <a href="{{#user.identities}} {{login}} {{/user.identities}}" class='link' data-hull-id="{{id}}">Reply</a>
+                  </small>
+
                 {{#if isDeletable}}
                   <small>
                     <a href="#" class='link' data-hull-action="delete" data-hull-id="{{id}}">Delete</a>
