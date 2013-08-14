@@ -45,7 +45,7 @@ class CoderSearchesController < ApplicationController
     User.joins(:language).where(:notify => true).each do |user|
       # If user in database (Matt) with notable => true has same language/level as @current_user, Matt will be notified of @current_user
       if user != @current_user # This is to prevent youself from getting an email notification
-        if user.language_id == @current_user.language_id && user.level == @current_user.level
+        if @current_user.language_id == user.language_id && @current_user.level == user.level
           @recipient = user
           @new_buddy = @current_user
           @new_buddy_language = @current_user.language.language
