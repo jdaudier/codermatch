@@ -99,6 +99,7 @@ GEM
     mime-types (1.23)
     multi_json (1.7.7)
     multipart-post (1.2.0)
+    newrelic_rpm (3.6.6.147)
     pg (0.15.1)
     polyglot (0.3.3)
     quiet_assets (1.0.2)
@@ -178,6 +179,7 @@ DEPENDENCIES
   hirb
   hullio!
   jquery-rails
+  newrelic_rpm
   pg
   quiet_assets
   rails (= 3.2.13)
