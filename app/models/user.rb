@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   LEVELS = ['Beginner', 'Intermediate', 'Advanced']
 
-  attr_accessible :language_id, :language, :level, :zipcode, :firstname, :lastname, :email, :name, :login, :remotable
+  attr_accessible :language_id, :language, :level, :zipcode, :firstname, :lastname, :email, :name, :login, :remotable, :notify
 
   #Enforces presence of 5-digit zipcode on signup form
   # validates_presence_of :zipcode, :on => :update

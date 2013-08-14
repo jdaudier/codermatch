@@ -12,6 +12,13 @@ Codermatch::Application.routes.draw do
   resources :languages
   resources :levels
   resources :users
+  # get 'users/', to: user#index
+  # get 'users/:id', to: user#show
+  # get 'users/new', to: user#new
+  # post 'users/create', to: user#create
+  # get 'users/edit', to: user#edit
+  # put 'users/:id', to: user#update
+  # delete 'users/:id', to: user#delete
 
 
 

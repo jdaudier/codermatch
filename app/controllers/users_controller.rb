@@ -8,16 +8,19 @@ class UsersController < ApplicationController
     end
   end
 
-  def notify
-  	# if !params[:data][:content].empty?
-  		#
-  	# end
-  end
-
   def destroy
     @user = @current_user
     @user.destroy
     session[:current_user] = nil #not sure about this code
+
+    respond_to do |format|
+      format.json { render nothing: true, status: 200 }
+    end
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update_attributes(params[:user])
 
     respond_to do |format|
       format.json { render nothing: true, status: 200 }

@@ -15,6 +15,14 @@
 								Delete my account
 							</a>
 			  		</p>
+			  		<% if @current_user.notify == true %>
+			  		<p>
+			  			<a href="#" class="btn btn-small delete" id="delete-account" onclick="setNotifyFalse(<%=@current_user.id%>)">
+								<i class="icon-envelope-alt icon-large"></i>
+								Turn off remote pairing notifications
+							</a>
+			  		</p>
+			  		<% end %>
 		  		<% end %>
 		  </div>
 		  <div class="span5">
