@@ -7,7 +7,7 @@ I found <span class="results-count"><%= pluralize(@results.count, 'nerd') %></sp
 <%= form_tag '/both_results_remote', method: 'POST', class: 'remote-results'  do %>
   <%= hidden_field_tag :level, "#{params[:level]}" %>
   <%= hidden_field_tag :language, "#{params[:language]}" %>
-  <%= submit_tag "REMOTE RESULTS", class: 'btn btn-primary toggle-results' %>
+  <%= submit_tag "SEE REMOTE RESULTS", class: 'btn btn-primary toggle-results' %>
 <% end %>
 
 <%= gmaps4rails(@json) %>
