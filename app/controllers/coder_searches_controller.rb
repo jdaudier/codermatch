@@ -42,20 +42,19 @@ class CoderSearchesController < ApplicationController
 
     # If there is another coder with same language and level as me, send my info to them
 
-
     User.joins(:language).where(
       :notify => true,
-      :language_id => @current_user.id,
+      :language_id => @current_user.language_id,
       :level => @current_user.level
       ).each do |user|
-    # If user in database (Matt) with notable => true has same language/level as @current_user, Matt will be notified of @current_user
-    if user != @current_user # This is to prevent youself from getting an email notification
-      @recipient = user
-      @new_buddy = @current_user
-      @new_buddy_language = @current_user.language.language
-      Notifications.delay.remotable_notify(@recipient, @new_buddy, @new_buddy_language)
+      # If user in database (Matt) with notable => true has same language/level as @current_user, Matt will be notified of @current_user
+      if user != @current_user # This is to prevent youself from getting an email notification
+        @recipient = user
+        @new_buddy = @current_user
+        @new_buddy_language = @current_user.language.language
+        Notifications.delay.remotable_notify(@recipient, @new_buddy, @new_buddy_language)
+      end
     end
-  end
 
     #redirects using the pair language and pair level parameters passed
     #through the hidden fields

@@ -6,7 +6,7 @@
       </li>
       <li>
         <div class="github-button">
-          <% if @current_user %>
+          <% if @current_user && @current_user.id != nil %>
             <!-- Original text: -->
             <!-- Logged in as <%= @current_user.name %> -->
             <%= link_to "My Profile", user_path(@current_user.login), :class => "profile-link" %></span>
@@ -14,6 +14,8 @@
             <!-- This resolves the bug of logging out from user profile and redirecting to homepage: onclick="Hull.logout().then(function () {window.location = '/'})-->
 
             <a href="#" class="sign-out" onclick="Hull.logout().then(function () {window.location = '/'})">Git Out</a>
+          <% elsif @current_user %>
+              <a href="#" class="sign-out" onclick="Hull.logout().then(function () {window.location = '/'})">Git Out</a>
           <% else %>
             <button class="btn" onclick="Hull.login('github')"><i class="icon-github icon-large"></i> Log in with GitHub</button>
           <% end %>

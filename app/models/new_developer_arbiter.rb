@@ -43,7 +43,7 @@ class NewDeveloperArbiter #< Valuable
 
     User.joins(:language).where(
       :notify => true,
-      :language_id => @current_user.id,
+      :language_id => @current_user.language_id,
       :level => @current_user.level
       ).each do |user|
       # If user in database (Matt) with notable => true has same language/level as @current_user, Matt will be notified of @current_user
