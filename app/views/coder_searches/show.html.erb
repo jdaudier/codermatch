@@ -22,6 +22,10 @@
           <% elsif @results.count == 0 && @remotable_results.count >= 1 %>
             <%= render partial: "only_remotable_results" %>
 
+          <!-- If local results but no remote (@current_user 'can' do remote) -->
+          <% elsif @results.count >= 1 && @remotable_results.count == 0 %>
+            <%= render partial: "manyresults" %>
+
           <!-- If no local or remote results. -->
           <% elsif @results.count == 0 && @remotable_results.count == 0 %>
             <%= render partial: "no_results" %>
