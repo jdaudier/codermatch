@@ -5,17 +5,17 @@
       <li><a href="/"><%= image_tag("codermatch-logo.svg", :alt => "CoderMatch Logo", :class => "brand") %></a>
       </li>
       <li>
-        <div class="github-button">        
+        <div class="github-button">
           <% if @current_user %>
-          <!-- Original text: -->      
-          <!-- Logged in as <%= @current_user.name %> --> 
-          <%= link_to "My Profile", user_path(@current_user.login), :class => "profile-link" %></span>
-          <br>
-          <!-- This resolves the bug of logging out from user profile and redirecting to homepage: onclick="Hull.logout().then(function () {window.location = '/'})-->
+            <!-- Original text: -->
+            <!-- Logged in as <%= @current_user.name %> -->
+            <%= link_to "My Profile", user_path(@current_user.login), :class => "profile-link" %></span>
+            <br>
+            <!-- This resolves the bug of logging out from user profile and redirecting to homepage: onclick="Hull.logout().then(function () {window.location = '/'})-->
 
-          <a href="#" class="sign-out" onclick="Hull.logout().then(function () {window.location = '/'})">Git Out</a>
+            <a href="#" class="sign-out" onclick="Hull.logout().then(function () {window.location = '/'})">Git Out</a>
           <% else %>
-          <button class="btn" onclick="Hull.login('github')"><i class="icon-github icon-large"></i> Log in with GitHub</button>
+            <button class="btn" onclick="Hull.login('github')"><i class="icon-github icon-large"></i> Log in with GitHub</button>
           <% end %>
         </div>
 
