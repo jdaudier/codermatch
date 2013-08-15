@@ -16,7 +16,7 @@
         <!-- If user CAN remote pair. -->
         <% else %>
           <% if @results.count >= 1 && @remotable_results.count >= 1 %>
-            <%= render partial: "both_result" %>
+            <%= render partial: "both_results_local" %>
 
           <!-- If no local results. -->
           <% elsif @results.count == 0 && @remotable_results.count >= 1 %>
@@ -31,9 +31,3 @@
   </div>
   <div class="span2"></div>
 </div>
-
-
-
-
-
-

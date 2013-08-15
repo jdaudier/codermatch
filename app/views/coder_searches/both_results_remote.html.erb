@@ -1,0 +1,39 @@
+<div class="container matches">
+  <div class="span2"></div>
+
+  <div class="span8 right-column">
+    <h1 id='form-header'>Matches</h1>
+    <hr>
+      <h3>
+        I found <span class="results-count"><%= pluralize(@remotable_results.count, 'nerd') %></span> that you can pair with remotely:
+
+        <a href='#' onclick='history.go(-1);return false;'>
+          <button class="btn btn-primary toggle-results">LOCAL RESULTS</button>
+        </a>
+
+        <%= gmaps4rails(@json2) %>
+
+        <% @remotable_results.each do |result| %>
+          <div class="row-fluid">
+              <div class="results-img span2">
+                <%= link_to image_tag(gravatar(result, 100)), user_path(result.login) %>
+
+                <% if result.geocoded? %>
+                  <h6><%= result.distance_from([@current_user.latitude, @current_user.longitude]).round(1) %> miles away</h6>
+                <% end %>
+
+              </div>
+              <div class="results-contact span10">
+                  <%= link_to result.name, user_path(result.login) %> is a great match for you! You can contact this rockstar hacker at:
+                  <a href="mailto:<%= result.email %>"><%= result.email %></a>
+              </div>
+          </div>
+          <div class="row-fluid"><hr></div>
+        <% end %>
+
+        <span class = "pagination"><%= will_paginate @remotable_results %></span>
+      </h3>
+  </div>
+  <div class="span2"></div>
+</div>
+

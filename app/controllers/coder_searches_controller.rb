@@ -29,11 +29,11 @@ class CoderSearchesController < ApplicationController
       end
     end
 
-    # if @results
-      @json = @results.to_gmaps4rails
-    # elsif @remotable_results
-      @json2 = @remotable_results.to_gmaps4rails
-    # end
+
+    @json = @results.to_gmaps4rails
+
+    @json2 = @remotable_results.to_gmaps4rails
+
   end
 
   def make_remotable
@@ -62,6 +62,18 @@ class CoderSearchesController < ApplicationController
   def remote_pair_notification
     @current_user.notify = true
     @current_user.save
+  end
+
+  def both_results_remote
+    params[:per_page] ||= 10 # sets default number of results per pages
+    params[:page] ||= 1 # sets default starting number for pages
+
+    @remotable_results = User.
+      where('languages.language = ?', params[:language]).
+      where('level = ?', params[:level]).
+      where(:remotable => true).joins(:language).where('users.id != ?', @current_user.id).page(params[:page].to_i).per_page(params[:per_page].to_i)
+
+    @json2 = @remotable_results.to_gmaps4rails
   end
 end
 

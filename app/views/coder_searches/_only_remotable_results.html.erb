@@ -1,5 +1,5 @@
 No one nearby is available to pair with you. However, I found
-<span class="results-count"><%= pluralize(@results.count, 'nerd') %></span> that you can pair with remotely:
+<span class="results-count"><%= pluralize(@remotable_results.count, 'nerd') %></span> that you can pair with remotely:
 
 <%= gmaps4rails(@json2) %>
 <% @remotable_results.each do |result| %>
