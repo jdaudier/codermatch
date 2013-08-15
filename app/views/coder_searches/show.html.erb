@@ -5,24 +5,26 @@
     <h1 id='form-header'>Matches</h1>
     <hr>
       <h3>
-
+        <!-- If user CANNOT remote pair. -->
         <% if @current_user.remotable == false %>
-          <% if @results.count == 1 %>
-            <%= render partial: "oneresult" %>
-          <% elsif @results.count == 0 %>
-            <%= render partial: "noresults" %>
-          <% else %>
+          <% if @results.count >= 1 %>
             <%= render partial: "manyresults" %>
+          <% elsif @results.count == 0 %>
+              <%= render partial: "no_local_results" %>
           <% end %>
 
-          <!-- If there are remotable users, renders remotable results. -->
+        <!-- If user CAN remote pair. -->
         <% else %>
-          <% if @remotable_results.count == 1 %>
-            <%= render partial: "one_remotable_result" %>
-          <% elsif @remotable_results.count > 1 %>
-            <%= render partial: "remotable_results" %>
-          <% elsif @remotable_results.count == 0 %>
-            <%= render partial: "no_remotable_results" %>
+          <% if @results.count >= 1 && @remotable_results.count >= 1 %>
+            <%= render partial: "both_result" %>
+
+          <!-- If no local results. -->
+          <% elsif @results.count == 0 && @remotable_results.count >= 1 %>
+            <%= render partial: "only_remotable_results" %>
+
+          <!-- If no local or remote results. -->
+          <% elsif @results.count == 0 && @remotable_results.count == 0 %>
+            <%= render partial: "no_results" %>
           <% end %>
         <% end %>
       </h3>

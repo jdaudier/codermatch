@@ -1,6 +1,5 @@
 I found
-<span class="results-count"><%= @results.count %></span>
-nerds in your area:
+<span class="results-count"><%= pluralize(@results.count, 'nerd') %></span> in your area:
 
 <!-- @results is an array of the people that match your search and we're iterating through them -->
 <!-- user_path(result.login) links to the user profile view -->
