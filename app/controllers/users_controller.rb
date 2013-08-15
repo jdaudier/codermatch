@@ -12,8 +12,10 @@ class UsersController < ApplicationController
     @user = @current_user
     @user.destroy
     session[:current_user] = nil #not sure about this code
+    flash[:hull_logout] = true
 
     respond_to do |format|
+      format.html { redirect_to root_path }
       format.json { render nothing: true, status: 200 }
     end
   end

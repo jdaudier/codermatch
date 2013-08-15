@@ -10,11 +10,15 @@
 		    	<% if @current_user && @current_user.login == @id %>
 			    	<p>
 				<!-- id below is when we want to switch onclick to a JS / jQuery file -->
-							<a href="#" class="btn btn-small delete" id="delete-account" onclick="Hull.logout().then(function () {window.location = '/'});destroyUser(<%=@current_user.id%>)">
+							<%= link_to user_path(@current_user), :method => :delete, :confirm => 'Are you sure you want to delete your account?', :class => 'btn btn-small delete' do %>
 								<i class="icon-trash icon-large"></i>
 								Delete my account
-							</a>
-			  		</p>
+							<% end %>
+
+							<!-- OLD CODE:
+							<a href="#" class="btn btn-small delete" id="delete-account" onclick="Hull.logout().then(function () {window.location = '/'});destroyUser(<%=@current_user.id%>)"></a>
+							 -->
+						</p>
 			  		<% if @current_user.notify == true %>
 			  		<p>
 			  			<a href="#" class="btn btn-small delete" id="delete-account" onclick="setNotifyFalse(<%=@current_user.id%>)">

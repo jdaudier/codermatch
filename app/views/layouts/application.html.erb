@@ -26,8 +26,19 @@
     <%= favicon_link_tag 'favicon.ico' %>
 
     <script type="text/javascript">
-    Hull.init({ appId: '<%= Hull.app_id %>', orgUrl: '<%= Hull.org_url %>' });
+
+    Hull.init({ appId: '<%= Hull.app_id %>', orgUrl: '<%= Hull.org_url %>' }, function ()
+    {
+
+    // Afer user is destroyed, flash message stays with one redirect and will be true here
+      <% if flash[:hull_logout] == true %>
+        Hull.logout().then(function () {window.location = '/'});
+      <% end %>
+
+    });
+
     Hull.on('hull.auth.**', function() { document.location.reload(); });
+
     </script>
 
     <!-- Google Analytics -->
