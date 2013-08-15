@@ -3,8 +3,8 @@ class CreateNotificationsChecks < ActiveRecord::Migration
     create_table :notifications_checks do |t|
 
       t.timestamps
-      t.string :recipient
-      t.string :new_buddy
+      t.integer :recipient_id
+      t.integer :new_buddy_id
 
     end
   end

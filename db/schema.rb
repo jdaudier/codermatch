@@ -36,10 +36,10 @@ ActiveRecord::Schema.define(:version => 20130815202900) do
   end
 
   create_table "notifications_checks", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "recipient"
-    t.string   "new_buddy"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "recipient_id"
+    t.integer  "new_buddy_id"
   end
 
   create_table "sessions", :force => true do |t|

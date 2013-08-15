@@ -56,11 +56,11 @@ class NewDeveloperArbiter #< Valuable
 
         @new_buddy_language = @current_user.language.language
 
-        if NotificationsCheck.where(:recipient => @recipient, :new_buddy => @new_buddy).present? == false
+        if NotificationsCheck.where(:recipient_id => @recipient.id, :new_buddy_id => @new_buddy.id).present? == false
 
           Notifications.delay.remotable_notify(@recipient, @new_buddy, @new_buddy_language)
 
-          NotificationsCheck.create(:recipient => @recipient, :new_buddy => @new_buddy)
+          NotificationsCheck.create(:recipient_id => @recipient.id, :new_buddy_id => @new_buddy.id)
         end
       end
     end
