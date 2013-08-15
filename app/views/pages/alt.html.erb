@@ -31,8 +31,13 @@
     </div>
   </div>
   <div class="subheading">
-    <h3>Sign up with GitHub, and enter your zip code to find local coders to pair program with</h3>
+    <h3>Enter your zip code to find local (and remote) coders to pair program with</h3>
+     <div class="second-github-button">
+      <button class="btn" onclick="Hull.login('github')"><i class="icon-github icon-large"></i> Log in with GitHub
+      </button>
+    </div>
   </div>
+
   <div class="gmaps">
     <%= gmaps4rails(@json) %>
   </div>
