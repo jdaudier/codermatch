@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
       user_zipcode = User.where(login: self.login).first.zipcode
       # if @current_user.present?
         User.where(zipcode: user_zipcode).each do |u|
-          html << "<h5>#{u.login}</h5>"
+          html << "<h5>#{u.name}</h5>"
         end
         html
       # end
