@@ -39,7 +39,9 @@ class NewDeveloperArbiter #< Valuable
       :level => self.my_level,
       :remotable => self.remotable #This sets current_user's remotable to false when they click 'match me'. If they find nobody, they can come back and do zip code search.
     })
+  end
 
+  def send_notification_mailer
 
     User.joins(:language).where(
       :notify => true,
@@ -48,10 +50,18 @@ class NewDeveloperArbiter #< Valuable
       ).each do |user|
       # If user in database (Matt) with notable => true has same language/level as @current_user, Matt will be notified of @current_user
       if user != @current_user # This is to prevent youself from getting an email notification
+
         @recipient = user
         @new_buddy = @current_user
+
         @new_buddy_language = @current_user.language.language
-        Notifications.delay.remotable_notify(@recipient, @new_buddy, @new_buddy_language)
+
+        if NotificationsCheck.where(:recipient => @recipient, :new_buddy => @new_buddy).present? == false
+
+          Notifications.delay.remotable_notify(@recipient, @new_buddy, @new_buddy_language)
+
+          NotificationsCheck.create(:recipient => @recipient, :new_buddy => @new_buddy)
+        end
       end
     end
 
