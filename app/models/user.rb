@@ -8,11 +8,11 @@ class User < ActiveRecord::Base
   validates_length_of :zipcode, :is => 5, :allow_blank => false
 
   belongs_to :language
-  def self.from_hull_user hull_user_id
+  def self.from_hull_user(hull_user_id)
     hull_user = Hull.get(hull_user_id)
     github_user = hull_user['identities'].select { |i| i['provider'] == 'github' }.first
     user = User.find_or_create_by_login(github_user['login'])
-    user.update_attributes({ email: hull_user['email'], name: hull_user['name'] })
+    user.update_attributes({ email: hull_user['email'], name: hull_user['name'] }) if user.email.blank?
     user
   end
 
