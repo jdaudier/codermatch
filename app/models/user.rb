@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
 
   geocoded_by :zipcode
   # after_validation :geocode
-  after_validation :geocoder_with_maps
+  after_save :geocoder_with_maps
 
   acts_as_gmappable
 
