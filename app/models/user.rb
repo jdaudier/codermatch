@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   #Enforces presence of 5-digit zipcode on signup form
   # validates_presence_of :zipcode, :on => :update
-  validates_length_of :zipcode, :is => 5, :allow_blank => false, :on => :update
+  validates_length_of :zipcode, :is => 5, :allow_blank => false
 
   belongs_to :language
   def self.from_hull_user hull_user_id
@@ -17,8 +17,7 @@ class User < ActiveRecord::Base
   end
 
   geocoded_by :zipcode
-  # after_validation :geocode
-  after_save :geocoder_with_maps
+  before_save :geocoder_with_maps
 
   acts_as_gmappable
 
