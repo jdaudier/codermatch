@@ -22,15 +22,22 @@ class User < ActiveRecord::Base
 
   acts_as_gmappable
 
+  puts "it is jsut about to run geocoder with maps"
   def geocoder_with_maps
-    uri_clean = URI.escape("https://maps.googleapis.com/maps/api/geocode/json?address=#{self.zipcode}&sensor=false")
-    response = open(uri_clean).read
-    parsed_response = JSON.parse(response)
-    self.latitude = parsed_response["results"].first["geometry"]["location"]["lat"].to_f
-    self.longitude = parsed_response["results"].first["geometry"]["location"]["lng"].to_f
-    puts "the geocoder data is working! See below."
-    puts self.latitude
-    puts self.longitude
+    puts "starts geocoder with maps"
+    puts "Does this instance have a zipcode"
+    puts self.zipcode?
+    if self.zipcode?
+      puts "inside geocder with maps conditional"
+      uri_clean = URI.escape("https://maps.googleapis.com/maps/api/geocode/json?address=#{self.zipcode}&sensor=false")
+      response = open(uri_clean).read
+      parsed_response = JSON.parse(response)
+      self.latitude = parsed_response["results"].first["geometry"]["location"]["lat"].to_f
+      self.longitude = parsed_response["results"].first["geometry"]["location"]["lng"].to_f
+      puts "the geocoder data is working! See below."
+      puts self.latitude
+      puts self.longitude
+    end
   end
 
   def gmaps4rails_address
