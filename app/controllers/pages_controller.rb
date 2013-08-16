@@ -21,6 +21,10 @@ class PagesController < ApplicationController
     end
   end
 
+  require 'json'
+  require 'open-uri'
+  require 'uri'
+
   # alt is our root
   def alt
     @json = User.all.to_gmaps4rails
