@@ -181,7 +181,7 @@ DEPENDENCIES
   newrelic_rpm
   pg
   quiet_assets
-  rails (= 3.2.13)
+  rails (~> 3.2)
   rspec-rails (~> 2.0)
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
