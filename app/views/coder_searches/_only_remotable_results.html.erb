@@ -16,7 +16,11 @@ No one nearby is available to pair with you. However, I found
           <%= link_to result.name, user_path(result.login) %> is a great match for you! 
           
             <%= form_tag '/send_pair_request', method: 'POST' do %>
-             <%= submit_tag "Send Pair Request", class: 'btn btn-primary', 'data-disable-with' => "Sure thing!" %>
+              <% @result_email = result.email %>
+              <%= hidden_field_tag :recipient, result.email %>              
+              
+              <%= submit_tag "Send Pair Request", class: 'btn btn-primary', 'data-disable-with' => "Sure thing!" %>
+
             <% end %>
           
           <!-- <a href="mailto:<%= result.email %>"><%= result.email %></a> -->

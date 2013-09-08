@@ -38,8 +38,3 @@ var setNotifyFalse = function(userId){
   $(".icon-envelope-alt").parent().parent().remove();
 };
 
-var revealContactForm = function(event){
-  event.preventDefault();
-  $(this).closest('.results-contact').find('contact_form').show();
-}
-

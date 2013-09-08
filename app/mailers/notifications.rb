@@ -23,8 +23,13 @@ class Notifications < ActionMailer::Base
     mail to: recipient.email, :subject => subject
   end
 
-  def contact_pair
-    
+  def contact_pair(sender, recipient_email)
+    @recipient_email = recipient_email
+    @sender = sender
+    # @sender_language = sender_language
+    subject = "#{sender} wants to pair program with you!"
+
+    mail to: recipient_email, :subject => subject
     
   end
 end
