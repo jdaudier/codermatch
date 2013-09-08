@@ -22,4 +22,9 @@ class Notifications < ActionMailer::Base
     subject = "There is a new coder who you might be able to pair with"
     mail to: recipient.email, :subject => subject
   end
+
+  def contact_pair
+    
+    
+  end
 end

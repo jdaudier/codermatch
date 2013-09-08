@@ -1,0 +1,5 @@
+#search view for users
+
+<% link_to "Connect", "/users/#{@user.id}" %>
+
+  

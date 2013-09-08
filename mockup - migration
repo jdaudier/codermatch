@@ -1,0 +1,17 @@
+class CreateConnection < ActiveRecord::Migration
+  def change
+    create_table :connections do |t|
+        attr_accessible :inviter, :invitee, :status, :message, :token
+
+      t.name 
+
+      t.string :status, default: :sent
+
+      t.integer :level
+      t.string :language
+      t.integer :zipcode
+
+      t.timestamps
+    end
+  end
+end

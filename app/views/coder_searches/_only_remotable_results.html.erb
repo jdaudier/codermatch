@@ -13,8 +13,13 @@ No one nearby is available to pair with you. However, I found
 
       </div>
       <div class="results-contact span10">
-          <%= link_to result.name, user_path(result.login) %> is a great match for you! You can contact this rockstar hacker at:
-          <a href="mailto:<%= result.email %>"><%= result.email %></a>
+          <%= link_to result.name, user_path(result.login) %> is a great match for you! 
+          
+            <%= form_tag '/send_pair_request', method: 'POST' do %>
+             <%= submit_tag "Send Pair Request", class: 'btn btn-primary', 'data-disable-with' => "Sure thing!" %>
+            <% end %>
+          
+          <!-- <a href="mailto:<%= result.email %>"><%= result.email %></a> -->
       </div>
   </div>
   <div class="row-fluid"><hr></div>

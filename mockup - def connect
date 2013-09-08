@@ -1,0 +1,6 @@
+def connect
+  sender = current_user
+  recepient = params[:recepient]
+  msg = params[:msg]
+  Connection.create(:sender => sender, )...
+end
