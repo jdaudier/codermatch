@@ -13,7 +13,8 @@ class PagesController < ApplicationController
     arbiter = NewDeveloperArbiter.new( params[:signup], @current_user )
     # @current_user is passed in during the creation of the arbiter (new_developer_arbiter.rb)
     if arbiter.process
-      arbiter.send_notification_mailer
+      # removing this code due to table getting too large
+      # arbiter.send_notification_mailer
       redirect_to arbiter.search
     else
       flash[:notice] = "This is here just for our if statement in the form that makes the zipcode input red. Must remove later."
