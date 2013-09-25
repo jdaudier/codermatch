@@ -44,25 +44,29 @@ class NewDeveloperArbiter #< Valuable
   def send_notification_mailer
 
     User.joins(:language).where(
-      :notify => true,
-      :language_id => @current_user.language_id,
-      :level => @current_user.level
+      :notify => true
       ).each do |user|
-      # If user in database (Matt) with notable => true has same language/level as @current_user, Matt will be notified of @current_user
-      if user != @current_user # This is to prevent youself from getting an email notification
+        @user_to_notify = user
 
-        @recipient = user
-        @new_buddy = @current_user
+        # The new_buddies hash will be populated with all users that meet criteria of @user_to_notify that have registered since a week before
+        @new_buddies = []
 
-        @new_buddy_language = @current_user.language.language
+        User.joins(:language).where(
+          :language_id => @user_to_notify.language_id,
+          :level => @user_to_notify.level
+          ).each do |new_buddy|
 
-        if NotificationsCheck.where(:recipient_id => @recipient.id, :new_buddy_id => @new_buddy.id).present? == false
+          @new_buddy = new_buddy
+          @new_buddy_creation = @new_buddy.created_at
+          @one_week_ago = 1.week.ago
 
-          Notifications.delay.remotable_notify(@recipient, @new_buddy, @new_buddy_language)
-
-          NotificationsCheck.create(:recipient_id => @recipient.id, :new_buddy_id => @new_buddy.id)
+          if @new_buddy_creation >= @one_week_ago
+            @new_buddies << @new_buddy
+          end
         end
-      end
+    
+      Notifications.delay.remotable_notify(@user_to_notify, @new_buddies)
+
     end
 
   end
