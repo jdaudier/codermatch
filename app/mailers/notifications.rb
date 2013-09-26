@@ -43,7 +43,9 @@ class Notifications < ActionMailer::Base
           @new_buddy_creation = @new_buddy.created_at
           @one_week_ago = 1.week.ago
 
-          if @new_buddy_creation >= @one_week_ago
+          # prevents @recipient from getting themselves as a new buddy in the notifications email
+          #Also, only chooses new buddies who were added to database in last week
+          if @new_buddy != @recipient && @new_buddy_creation >= @one_week_ago  
             @new_buddies << @new_buddy
           end
         end
