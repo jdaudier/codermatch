@@ -41,4 +41,8 @@ Codermatch::Application.configure do
   :user_name => ENV["MANDRILL_USERNAME"],
   :password  => ENV["MANDRILL_API_KEY"]
 }
+
+# allows mailers to be tested in developed (this can be donw in console through Notifications.mailer_method.deliver)
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.perform_deliveries = true
 end
