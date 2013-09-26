@@ -12,6 +12,9 @@ class User < ActiveRecord::Base
     hull_user = Hull.get(hull_user_id)
     github_user = hull_user['identities'].select { |i| i['provider'] == 'github' }.first
     user = User.find_or_create_by_login(github_user['login'])
+    # doesn't update the user's email unless it's blank - avoids hull's cache overwriting corrections to the user's email. We need to do this for the user's name as well. 
+    # Can update individual column for each user by doing something like this: 
+    # u = User.last, and then: u.update_column(:name, 'Burt')
     user.update_attributes({ email: hull_user['email'], name: hull_user['name'] }) if user.email.blank?
     user
   end
