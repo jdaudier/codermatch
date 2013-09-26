@@ -13,7 +13,7 @@ class PagesController < ApplicationController
     arbiter = NewDeveloperArbiter.new( params[:signup], @current_user )
     # @current_user is passed in during the creation of the arbiter (new_developer_arbiter.rb)
     if arbiter.process
-      # removing this code due to table getting too large
+      # removing this code due to table getting too larges
       # arbiter.send_notification_mailer
       redirect_to arbiter.search
     else
