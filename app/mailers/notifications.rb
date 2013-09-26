@@ -50,8 +50,8 @@ class Notifications < ActionMailer::Base
           end
         end
     
-      #TEMPORARILY removing the .delay part to test
-      Notifications.remotable_notify(@recipient, @new_buddies, @recipient_language).deliver
+      # Can TEMPORARILY removing the .delay part to test in console. Add .deliver at the end as well to test in console
+      Notifications.delay.remotable_notify(@recipient, @new_buddies, @recipient_language)
 
     end
 
