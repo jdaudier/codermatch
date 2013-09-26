@@ -41,36 +41,6 @@ class NewDeveloperArbiter #< Valuable
     })
   end
 
-  def send_notification_mailer
-
-    User.joins(:language).where(
-      :notify => true
-      ).each do |user|
-        @user_to_notify = user
-
-        # The new_buddies hash will be populated with all users that meet criteria of @user_to_notify that have registered since a week before
-        @new_buddies = []
-
-        User.joins(:language).where(
-          :language_id => @user_to_notify.language_id,
-          :level => @user_to_notify.level
-          ).each do |new_buddy|
-
-          @new_buddy = new_buddy
-          @new_buddy_creation = @new_buddy.created_at
-          @one_week_ago = 1.week.ago
-
-          if @new_buddy_creation >= @one_week_ago
-            @new_buddies << @new_buddy
-          end
-        end
-    
-      Notifications.delay.remotable_notify(@user_to_notify, @new_buddies)
-
-    end
-
-  end
-
   def search
     # This info is used for searching but not saved to the User table (except zipcode)
     "/coder_search?language=#{pair_language}&level=#{pair_level}&zipcode=#{zipcode}"
