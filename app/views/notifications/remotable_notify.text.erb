@@ -1,5 +1,8 @@
-<%= @new_buddy.name %> just joined CoderMatch and is also a <%= @new_buddy.level.downcase%> <%= @new_buddy_language %> coder.
-
+Great news!
+Some new potential coding partners just joined Codermatch this week:
+<% @new_buddies.each do |new_buddy| %>
+<%= new_buddy.name %> just joined CoderMatch and is also a <%= new_buddy.level.downcase%> <%= @recipient_language %> coder.
+<% end %>
 Find them by doing a new search at http://codermatch.me
 
 Happy coding!

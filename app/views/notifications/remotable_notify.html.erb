@@ -45,17 +45,18 @@
 
 						<h3 style="margin: 0;padding: 0;font-family: &quot;HelveticaNeue-Light&quot;, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;line-height: 1.1;margin-bottom: 15px;color: #000;font-weight: 500;font-size: 27px;">You've got mail, <%= @recipient.name %>!</h3>
 						<br />
-						<%= image_tag(gravatar(@new_buddy, 100), alt: "Hola", style: "border-radius: 4px") %>
+						<% @new_buddies.each do |new_buddy| %>
+						<%= image_tag(gravatar(new_buddy, 100), alt: "Hola", style: "border-radius: 4px") %>
 
 						<p class="lead" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;margin-bottom: 10px;font-weight: normal;font-size: 19px;line-height: 1.6;">
-							<%= @new_buddy.name %> just joined CoderMatch and is also
-								<% if @new_buddy.level == "Intermediate" || @new_buddy.level == "Advanced"%>
-									an <%= @new_buddy.level.downcase%> <%= @new_buddy_language %> coder.
+							<%= new_buddy.name %> just joined CoderMatch and is also
+								<% if new_buddy.level == "Intermediate" || new_buddy.level == "Advanced"%>
+									an <%= new_buddy.level.downcase%> <%= @recipient_language %> coder.
 								<% else %>
-									a <%= @new_buddy.level.downcase%> <%= @new_buddy_language %> coder.
+									a <%= new_buddy.level.downcase %> <%= @recipient_language %> coder.
 								<% end %>
 						</p>
-
+						<% end %>
 						<p class="lead" style="margin: 0;padding: 0;font-family: &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;margin-bottom: 10px;font-weight: normal;font-size: 19px;line-height: 1.6;">
 							Find them by doing a new search on CoderMatch.
 						</p>
