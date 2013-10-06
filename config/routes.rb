@@ -13,7 +13,7 @@ Codermatch::Application.routes.draw do
   post '/both_results_remote' => 'coder_searches#both_results_remote'
 
   post '/send_pair_request' => 'contact#send_pair_request'
-  
+
   resource :coder_search
   resources :languages
   resources :levels
