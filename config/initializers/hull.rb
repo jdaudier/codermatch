@@ -17,7 +17,7 @@ Hull.configure do |config|
   config.authenticate_users = false
 
   # == hull.js version
-  config.js_url = "https://hull-js.s3.amazonaws.com/develop/hull.js"
+  config.js_url = "https://hull-js.s3.amazonaws.com/0.6.15/hull.js"
 
 end
 
