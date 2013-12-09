@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   # Enforces presence of zip- or post-code on signup form
   # validates_presence_of :zipcode, :on => :update
-  validates_length_of :zipcode, :is => 5, :allow_blank => false
+  validates_length_of :zipcode, :minimum => 5, :allow_blank => false
 
   belongs_to :language
   def self.from_hull_user(hull_user_id)
