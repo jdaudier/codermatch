@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
 
   attr_accessible :language_id, :language, :level, :zipcode, :firstname, :lastname, :email, :name, :login, :remotable, :notify
 
-  #Enforces presence of 5-digit zipcode on signup form
+  # Enforces presence of zip- or post-code on signup form
   # validates_presence_of :zipcode, :on => :update
   validates_length_of :zipcode, :is => 5, :allow_blank => false
 
