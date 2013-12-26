@@ -2,6 +2,15 @@
 	<div class="row">
 		<div class="span11 profile-container">
 			<h1 id='form-header'><%= @user.name %>'s Profile</h1>
+      <h3> Change settings for <%=@user.name%> </h3>
+       <%=form_for @user do |f| %>
+       Name:<%=f.text_field :name %>
+      <br>
+       Email: <%=f.email_field :email %>
+      <br>
+      <%=f.submit "Save" %>
+       <% end%>
+
 			<hr>
 		  <div class="span5">
 		    <h4>Repos</h4>

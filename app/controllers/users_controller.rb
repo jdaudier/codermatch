@@ -23,10 +23,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update_attributes(params[:user])
-
-    respond_to do |format|
-      format.json { render nothing: true, status: 200 }
-    end
+    redirect_to :back
   end
 
 end
