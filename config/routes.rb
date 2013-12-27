@@ -8,7 +8,7 @@ Codermatch::Application.routes.draw do
 
   post '/remotable' => 'coder_searches#make_remotable'
   post '/remotable_notification' => 'coder_searches#remote_pair_notification'
-  post '/both_results_remote' => 'coder_searches#both_results_remote'
+  get '/both_results_remote' => 'coder_searches#both_results_remote'
   resource :coder_search
   resources :languages
   resources :levels
