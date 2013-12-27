@@ -43,7 +43,15 @@ class NewDeveloperArbiter #< Valuable
 
   def search
     # This info is used for searching but not saved to the User table (except zipcode)
-    "/coder_search?language=#{pair_language}&level=#{pair_level}&zipcode=#{zipcode}"
+    Rails.application.routes.url_helpers.coder_search_path search_params
   end
 
+protected
+  def search_params
+    {
+      :language => pair_language,
+      :level => pair_level,
+      :zipcode => zipcode
+    }
+  end
 end

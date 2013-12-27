@@ -1,4 +1,5 @@
 <div class="span2"></div>
+<%= link_to "coder", :coder_search %>
 
 <div class="span8 right-column">
   <h1 id='form-header'>Who are you?</h1>
@@ -45,11 +46,11 @@ coder to pair program with around
 <% if notice.present? %>
   <span class="control-group error">
     <span class="controls">
-      <input id="inputError" type="text" pattern="[0-9]*" name="signup[zipcode]" placeholder="enter 5-digit zipcode">
+      <input id="inputError" type="text" name="signup[zipcode]" placeholder="zip or post code">
     </span>
   </span>
 <% else %>
-  <input type="text" pattern="[0-9]*" name="signup[zipcode]" placeholder="5-digit zip code">
+  <input type="text" name="signup[zipcode]" placeholder="zip or post code">
 <% end %>
     , and
       I
