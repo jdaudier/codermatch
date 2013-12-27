@@ -2,25 +2,25 @@
 	<div class="row">
 		<div class="span11 profile-container">
 			<h1 id='form-header'><%= @user.name %>'s Profile</h1>
-      <h3> Change settings for <%=@user.name%> </h3>
-       <%=form_for @user do |f| %>
-       Name:<%=f.text_field :name %>
-      <br>
-       Email: <%=f.email_field :email %>
-      <br>
-      <%=f.submit "Save" %>
-       <% end%>
-
 			<hr>
 		  <div class="span5">
 		    <h4>Repos</h4>
 		    <div data-hull-widget='repos' data-hull-login='<%= @id %>'></div>
+		    <hr>
+		    <i class="fa fa-cog"></i><h4>Update Profile</h4>
+       	<%=form_for @user do |f| %>
+       	Name: <%=f.text_field :name %>
+      	<br>
+       	Email: <%=f.email_field :email %>
+      	<br>
+      	<%=f.submit "Save", :class => 'btn btn-small delete'%>
+       	<% end %>
 		    <!-- If you're a current user and your GitHub login name is equal to the Hull id, then you will see the delete button -->
 		    	<% if @current_user && @current_user.login == @id %>
 			    	<p>
 				<!-- id below is when we want to switch onclick to a JS / jQuery file -->
 							<%= link_to user_path(@current_user), :method => :delete, :confirm => 'Are you sure you want to delete your account?', :class => 'btn btn-small delete' do %>
-								<i class="icon-trash icon-large"></i>
+								<i class="fa fa-trash-o fa-lg"></i>
 								Delete my account
 							<% end %>
 
@@ -31,7 +31,7 @@
 			  		<% if @current_user.notify == true %>
 			  		<p>
 			  			<a href="#" class="btn btn-small delete" id="delete-account" onclick="setNotifyFalse(<%=@current_user.id%>)">
-								<i class="icon-envelope-alt icon-large"></i>
+								<i class="fa fa-envelope-o fa-lg"></i>
 								Turn off remote pairing notifications
 							</a>
 			  		</p>

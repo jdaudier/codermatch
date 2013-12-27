@@ -35,6 +35,6 @@ var setNotifyFalse = function(userId){
 
   alert("You'll no longer get emails when a new coder of your language and level joins who can pair with you remotely.");
 
-  $(".icon-envelope-alt").parent().parent().remove();
+  $(".fa-envelope-o").parent().parent().remove();
 };
 

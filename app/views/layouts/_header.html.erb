@@ -17,7 +17,7 @@
           <% elsif @current_user %>
               <a href="#" class="sign-out" onclick="Hull.logout().then(function () {window.location = '/'})">Git Out</a>
           <% else %>
-            <button class="btn" onclick="Hull.login('github')"><i class="icon-github icon-large"></i> Log in with GitHub</button>
+            <button class="btn" onclick="Hull.login('github')"><i class="fa fa-github fa-lg"></i> Log in with GitHub</button>
           <% end %>
         </div>
 
