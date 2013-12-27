@@ -4,7 +4,7 @@ I found <span class="results-count"><%= pluralize(@results.count, 'nerd') %></sp
 
 <!-- <button class="btn btn-primary remotable-results">REMOTE RESULTS</button> -->
 
-<%= form_tag '/both_results_remote', method: 'POST', class: 'remote-results'  do %>
+<%= form_tag '/both_results_remote', method: 'GET', class: 'remote-results'  do %>
   <%= hidden_field_tag :level, "#{params[:level]}" %>
   <%= hidden_field_tag :language, "#{params[:language]}" %>
   <%= submit_tag "SEE REMOTE RESULTS", class: 'btn btn-primary toggle-results' %>
