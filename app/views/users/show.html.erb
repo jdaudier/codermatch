@@ -6,17 +6,17 @@
 		  <div class="span5">
 		    <h4>Repos</h4>
 		    <div data-hull-widget='repos' data-hull-login='<%= @id %>'></div>
-		    <hr>
-		    <i class="fa fa-cog fa-spin"></i><h4>Update Profile</h4>
-       	<%=form_for @user do |f| %>
-       	Name: <%=f.text_field :name %>
-      	<br>
-       	Email: <%=f.email_field :email %>
-      	<br>
-      	<%=f.submit "Save", :class => 'btn btn-small'%>
-       	<% end %>
 		    <!-- If you're a current user and your GitHub login name is equal to the Hull id, then you will see the delete button -->
 		    	<% if @current_user && @current_user.login == @id %>
+				    <hr>
+				    <i class="fa fa-cog fa-spin"></i><h4>Update Profile</h4>
+		       	<%=form_for @user do |f| %>
+		       	Name: <%=f.text_field :name %>
+		      	<br>
+		       	Email: <%=f.email_field :email %>
+		      	<br>
+		      	<%=f.submit "Save", :class => 'btn btn-small'%>
+		       	<% end %>
 			    	<p>
 				<!-- id below is when we want to switch onclick to a JS / jQuery file -->
 							<%= link_to user_path(@current_user), :method => :delete, :confirm => 'Are you sure you want to delete your account?', :class => 'btn btn-small delete' do %>
