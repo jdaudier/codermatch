@@ -1,7 +1,7 @@
 module HullEventHandler
 
   def self.handle event, request
-    if event && event['event'] == 'activity.create' && event['data']['object']['type'] == 'comment'
+    if event && event['eventName'] == 'create' && event['objectType'] == 'activity' && event['data']['object']['type'] == 'comment'
       target = event['data']['target'] rescue nil
       if target && target['uid'] =~ /user\//
         # send email from here...
